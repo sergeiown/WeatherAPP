@@ -1,9 +1,11 @@
-# Search for movies App
+# Get Weather App
 
-Search application for movies and TV series using The Open Movie Database API with AJAX.
+Weather forecast with search by city name.
 
-Search results are displayed ten per page.
-Page navigation is implemented.
-You can view detailed information about the selected movie or series.
+Fetch requests to the openweathermap api are used.
+
+Data is stored and displayed with cookies.
+
+After a minute, fresh data is requested.
 
 ![screenshot](./img/screenshot.jpg)
