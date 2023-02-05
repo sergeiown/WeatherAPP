@@ -1,9 +1,26 @@
 const form = document.querySelector("#form");
 const select = document.querySelector("#country");
+const button = document.querySelector("button");
+const buttonColors = [
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "indigo",
+  "violet",
+];
 const currentStatus = document.querySelector("#status");
 const updateTime = document.querySelector("#updateTime");
 const cookieTime = document.querySelector("#savedTime");
 const weatherIcon = document.querySelector("#weatherIcon");
+
+/* make the button visible enough for the user */
+let colorIndex = 0;
+setInterval(() => {
+  button.style.color = buttonColors[colorIndex % buttonColors.length];
+  colorIndex++;
+}, 1000);
 
 /* Read the list of countries and make select>option */
 fetch("../data/countries.json")
