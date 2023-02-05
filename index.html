@@ -28,11 +28,16 @@
   </head>
   <body>
     <form id="form">
-      <input type="text" id="city" placeholder="Kyiv" />
+      <input type="text" id="city" placeholder="Enter the name of the city" />
+
+      <select id="country">
+        <option value="" hidden>Select the country name *optional</option>
+      </select>
+
       <button type="submit">Get Weather</button>
     </form>
 
-    <div id="status">Enter a city name</div>
+    <div id="status"></div>
 
     <div id="weatherIcon"></div>
 

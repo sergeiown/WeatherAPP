@@ -12,6 +12,10 @@ body {
   #form {
     @extend %form;
 
+    input::placeholder {
+      color: #0e2a47;
+    }
+
     button {
       border: none;
       @extend %button;
