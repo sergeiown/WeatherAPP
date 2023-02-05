@@ -8,4 +8,17 @@ body {
   justify-content: center;
   align-items: center;
   background: url(../img/bg.svg) top left / cover no-repeat;
+
+  #form {
+    @extend %form;
+
+    button {
+      border: none;
+      @extend %button;
+
+      &:hover {
+        @extend %button-hover;
+      }
+    }
+  }
 }

@@ -36,8 +36,8 @@ form.addEventListener("submit", (event) => {
       //   );
 
       currentStatus.textContent = cookieData.forecast;
-      updateTime.textContent = `Last update: ${now.toLocaleString()}`;
-      cookieTime.textContent = `Cookie time: ${cookieSavedTime.toLocaleString()}`;
+      updateTime.textContent = `Saved data is shown`;
+      cookieTime.textContent = `Last update: ${cookieSavedTime.toLocaleString()}`;
       weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${cookieData.icon}@2x.png" alt="Weather icon">`;
       return;
     }
