@@ -37,11 +37,11 @@ form.addEventListener("submit", (event) => {
     const cookieData = JSON.parse(cookie.split("=")[1]);
     const cookieSavedTime = new Date(cookieData.time);
 
-    /* Check if stored forecast is for the same city and if it's not older than 1 minute */
+    /* Check if stored forecast is for the same city&country and if it's not older than 10 minutes */
     if (
       cookieData.city === city &&
       cookieData.country === country &&
-      now - cookieSavedTime < 60000
+      now - cookieSavedTime < 600000
     ) {
       console.log(cookie);
 
@@ -84,7 +84,7 @@ form.addEventListener("submit", (event) => {
         forecast,
         icon,
         time: now,
-      })}; max-age=60`;
+      })}; max-age=600`;
     })
     .catch((error) => {
       currentStatus.textContent = error.message;
