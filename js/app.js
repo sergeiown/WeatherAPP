@@ -6,7 +6,7 @@ const weatherIcon = document.querySelector("#weatherIcon");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  const city = document.querySelector("#city").value;
+  const city = document.querySelector("#city").value.trim();
   const now = new Date();
   currentStatus.textContent = `Loading...`;
   updateTime.textContent = "";
