@@ -1,0 +1,11 @@
+body {
+  position: relative;
+  user-select: none;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(../img/bg.svg) top left / cover no-repeat;
+}

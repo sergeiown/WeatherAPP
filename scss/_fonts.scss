@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Mina&display=swap");
+
+%fontfamily {
+  font-family: "Mina", sans-serif;
+  color: aqua;
+}
+
+%title {
+  font-size: 2rem;
+  color: aqua;
+  text-shadow: 0 0 0.2rem #000;
+  text-align: center;
+}
+
+%subtitle {
+  font-size: 1.5rem;
+  color: aqua;
+  text-shadow: 0 0 0.2rem #000;
+  text-align: center;
+}
+
+%form {
+  font-size: 1.1rem;
+  color: #0e2a47;
+  font-weight: bolder;
+}
+
+%text {
+  font-size: 1rem;
+  color: aqua;
+}
+
+%button {
+  font-size: 1rem;
+  color: aqua;
+  text-shadow: 0 0 0.2rem #000;
+  text-transform: uppercase;
+}
+
+%button-hover {
+  text-shadow: 0 0 0.1rem #ccc;
+}
+
+%button-active {
+  text-shadow: 0 0 0.2rem #ccc;
+}
+
+%button-form {
+  font-size: 1.2rem;
+  color: aqua;
+  text-shadow: 0 0 0.2rem #000;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 0.1rem;
+}
+
+%button-form-hover {
+  text-shadow: 0 0 0.1rem #ccc;
+}
+
+%button-form-active {
+  text-shadow: 0 0 0.2rem #ccc;
+}
+
+%button-form-disabled {
+  text-shadow: none;
+  color: rgba($color: aqua, $alpha: 0.2);
+}
