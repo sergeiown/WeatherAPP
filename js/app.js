@@ -28,8 +28,8 @@ form.addEventListener("submit", (event) => {
     // console.log(cookieSavedTime);
     // console.log(now);
 
-    /* Check if stored forecast is for the same city and if it's not older than 10 minutes */
-    if (cookieCity === city && now - cookieSavedTime < 600000) {
+    /* Check if stored forecast is for the same city and if it's not older than 1 minute */
+    if (cookieCity === city && now - cookieSavedTime < 60000) {
       //   console.log(cookie);
       //   console.log(
       //     new Date(JSON.parse(cookie.split("=")[1]).time).toLocaleString()
@@ -65,7 +65,7 @@ form.addEventListener("submit", (event) => {
         forecast,
         icon,
         time: now,
-      })}; max-age=600`;
+      })}; max-age=60`;
     })
     .catch((error) => {
       currentStatus.textContent = error.message;
