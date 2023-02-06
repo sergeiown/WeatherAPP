@@ -12,6 +12,13 @@
   background: rgba($color: #0e2a47, $alpha: 0.9);
   box-shadow: 0 0 2rem #fff;
 
+  @media only screen and (max-width: 1200px) and (orientation: landscape) {
+    width: 18rem;
+    height: 15rem;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
   input {
     padding: 0 0 0 0.3rem;
   }
@@ -19,6 +26,14 @@
   select {
     width: 28.125rem;
     background-color: rgba($color: #fff, $alpha: 0.7);
+
+    @media only screen and (max-width: 1200px) and (orientation: landscape) {
+      max-width: 16rem;
+    }
+
+    @media only screen and (max-width: 1200px) and (orientation: portrait) {
+      max-width: 26rem;
+    }
   }
   input::placeholder {
     color: #0e2a47;

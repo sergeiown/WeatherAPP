@@ -10,8 +10,8 @@ const buttonColors = [
   "indigo",
   "violet",
 ];
+const modal = document.querySelector(".modal");
 const container = document.querySelector(".container");
-const timeContainer = document.querySelector(".time");
 const currentTemp = document.querySelector("#currentTemp");
 const weatherIcon = document.querySelector("#weatherIcon");
 const currentStatus = document.querySelector("#status");
@@ -20,9 +20,10 @@ const humidity = document.querySelector("#humidity");
 const wind = document.querySelector("#wind");
 const sunrise = document.querySelector("#sunrise");
 const sunset = document.querySelector("#sunset");
+
+const timeContainer = document.querySelector(".time");
 const updateTime = document.querySelector("#updateTime");
 const cookieTime = document.querySelector("#savedTime");
-const modal = document.querySelector(".modal");
 
 /* make the button visible enough for the user */
 let colorIndex = 0;
