@@ -32,7 +32,7 @@ setInterval(() => {
 }, 1000);
 
 /* Read the list of countries and make select>option */
-fetch("../data/countries.json")
+fetch("./data/countries.json")
   .then((response) => response.json())
   .then((countries) => {
     countries.forEach((country) => {
