@@ -1,0 +1,14 @@
+.forecastContainer {
+  @extend %text;
+  width: 15rem;
+  height: 15rem;
+  max-width: 99vw;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  flex-wrap: wrap;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  background: rgba($color: #0e2a47, $alpha: 0.9);
+  box-shadow: 0 0 2rem #fff;
+}

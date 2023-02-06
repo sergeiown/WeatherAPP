@@ -6,16 +6,18 @@
 }
 
 %title {
-  font-size: 2rem;
-  color: aqua;
-  text-shadow: 0 0 0.2rem #000;
+  font-size: 5rem;
+  font-weight: bolder;
+  color: #0e2a47;
+  text-shadow: 0 0 1rem #fff;
   text-align: center;
 }
 
 %subtitle {
-  font-size: 1.5rem;
+  font-size: 4.5rem;
+  font-weight: bolder;
   color: aqua;
-  text-shadow: 0 0 0.2rem #000;
+  text-shadow: 0 0 0.5rem #000;
   text-align: center;
 }
 
@@ -26,27 +28,12 @@
 }
 
 %text {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: aqua;
-}
-
-%button {
-  font-size: 1rem;
-  color: aqua;
-  text-shadow: 0 0 0.2rem #000;
-  text-transform: uppercase;
-}
-
-%button-hover {
-  text-shadow: 0 0 0.1rem #ccc;
-}
-
-%button-active {
-  text-shadow: 0 0 0.2rem #ccc;
 }
 
 %button-form {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: aqua;
   text-shadow: 0 0 0.2rem #000;
   text-transform: uppercase;
@@ -60,9 +47,4 @@
 
 %button-form-active {
   text-shadow: 0 0 0.2rem #ccc;
-}
-
-%button-form-disabled {
-  text-shadow: none;
-  color: rgba($color: aqua, $alpha: 0.2);
 }

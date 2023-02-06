@@ -1,6 +1,7 @@
 body {
   position: relative;
   user-select: none;
+  overflow: hidden;
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
@@ -9,23 +10,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 4rem;
   background: url(../img/bg.svg) top left / cover no-repeat;
-
-  #form {
-    @extend %form;
-
-    input::placeholder {
-      color: #0e2a47;
-    }
-
-    button {
-      border: none;
-      @extend %button;
-      transition: color 1s ease-in-out;
-
-      &:hover {
-        @extend %button-hover;
-      }
-    }
-  }
 }

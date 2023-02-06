@@ -1,0 +1,40 @@
+#form {
+  @extend %form;
+  max-width: 99vw;
+  width: 34rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: rgba($color: #0e2a47, $alpha: 0.9);
+  box-shadow: 0 0 2rem #fff;
+
+  input {
+    padding: 0 0 0 0.3rem;
+  }
+  input,
+  select {
+    width: 28.125rem;
+    background-color: rgba($color: #fff, $alpha: 0.7);
+  }
+  input::placeholder {
+    color: #0e2a47;
+  }
+
+  button {
+    border: none;
+    @extend %button-form;
+    transition: color 1s ease-in-out;
+
+    &:hover {
+      @extend %button-form-hover;
+    }
+
+    &:active {
+      @extend %button-form-active;
+    }
+  }
+}

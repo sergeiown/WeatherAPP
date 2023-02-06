@@ -1,0 +1,16 @@
+.time {
+  visibility: hidden;
+  @extend %text;
+  width: 34rem;
+  max-width: 99vw;
+  height: 4.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 0.5rem;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  background: rgba($color: #0e2a47, $alpha: 0.9);
+  box-shadow: 0 0 2rem #fff;
+}

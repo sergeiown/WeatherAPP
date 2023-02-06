@@ -10,8 +10,10 @@ const buttonColors = [
   "indigo",
   "violet",
 ];
-const basic = document.querySelector(".basic");
+const container = document.querySelector(".container");
+const timeContainer = document.querySelector(".time");
 const currentTemp = document.querySelector("#currentTemp");
+const weatherIcon = document.querySelector("#weatherIcon");
 const currentStatus = document.querySelector("#status");
 const feelsLike = document.querySelector("#feelsLike");
 const humidity = document.querySelector("#humidity");
@@ -41,15 +43,17 @@ fetch("../data/countries.json")
     });
   });
 
-/* Read the list of countries and make select>option */
+/* Wait for user input and show preloader after submit */
 form.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  modal.textContent = `Loading...`;
+  modal.showModal();
 
   const city = document.querySelector("#city").value.trim();
   const country = select.value;
   const now = new Date();
 
-  modal.showModal();
   const elements = [
     currentTemp,
     currentStatus,
@@ -82,18 +86,18 @@ form.addEventListener("submit", (event) => {
     ) {
       console.log(cookie);
 
-      modal.close();
-
       currentTemp.textContent = cookieData.temp;
-      basic.style.background = `url(http://openweathermap.org/img/wn/${cookieData.icon}@2x.png) top left / cover no-repeat`;
+      weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${cookieData.icon}@2x.png" alt="Weather icon">`;
       currentStatus.textContent = cookieData.forecast;
       feelsLike.textContent = `Feels like: ${cookieData.tempFeelsLike}`;
       humidity.textContent = `Humidity: ${cookieData.humiditySource}`;
       wind.textContent = `Wind speed: ${cookieData.windSource}`;
-      sunrise.textContent = `Sunrise at ${cookieData.sunriseSource.toLocaleTimeString()}`;
-      sunset.textContent = `Sunset at ${cookieData.sunsetSource.toLocaleTimeString()}`;
+      sunrise.textContent = `Sunrise at ${cookieData.sunriseSource}`;
+      sunset.textContent = `Sunset at ${cookieData.sunsetSource}`;
       cookieTime.textContent = `Last update: ${cookieSavedTime.toLocaleString()}`;
       updateTime.textContent = `Saved data is shown`;
+
+      modal.close();
 
       return;
     }
@@ -123,21 +127,32 @@ form.addEventListener("submit", (event) => {
       const tempFeelsLike = `${Math.round(data.main.feels_like)} °C`;
       const humiditySource = `${data.main.humidity} %`;
       const windSource = `${data.wind.speed.toFixed(1)} m/s`;
-      const sunriseSource = new Date(data.sys.sunrise * 1000);
-      const sunsetSource = new Date(data.sys.sunset * 1000);
-
-      modal.close();
+      const sunriseSource = new Date(
+        data.sys.sunrise * 1000
+      ).toLocaleTimeString();
+      const sunsetSource = new Date(
+        data.sys.sunset * 1000
+      ).toLocaleTimeString();
 
       currentTemp.textContent = temp;
-      basic.style.background = `url(http://openweathermap.org/img/wn/${icon}@2x.png) top left / cover no-repeat`;
+      weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="Weather icon">`;
       currentStatus.textContent = forecast;
       feelsLike.textContent = `Feels like: ${tempFeelsLike}`;
       humidity.textContent = `Humidity: ${humiditySource}`;
       wind.textContent = `Wind speed: ${windSource}`;
-      sunrise.textContent = `Sunrise at ${sunriseSource.toLocaleTimeString()}`;
-      sunset.textContent = `Sunset at ${sunsetSource.toLocaleTimeString()}`;
+      sunrise.textContent = `Sunrise at ${sunriseSource}`;
+      sunset.textContent = `Sunset at ${sunsetSource}`;
       updateTime.textContent = `Last update: ${now.toLocaleString()}`;
 
+      /* Make forecast visible and close preloader */
+      const elements = [container, timeContainer];
+      elements.forEach((element) => {
+        element.style.visibility = "visible";
+      });
+
+      modal.close();
+
+      /* Save date to the cookie */
       document.cookie = `forecast=${JSON.stringify({
         temp,
         icon,

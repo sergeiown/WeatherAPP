@@ -1,0 +1,26 @@
+.basic {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  max-width: 99vw;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: rgba($color: #0e2a47, $alpha: 0.9);
+  box-shadow: 0 0 2rem #fff;
+
+  img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -40%);
+  }
+
+  #currentTemp {
+    @extend %subtitle;
+    z-index: 1;
+  }
+}

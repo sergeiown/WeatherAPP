@@ -1,6 +1,13 @@
 @import "../scss/reset";
 @import "../scss/fonts";
 @import "../scss/body";
+@import "../scss/modal";
+@import "../scss/form";
+@import "../scss/scroll";
+@import "../scss/container";
+@import "../scss/basic";
+@import "../scss/forecast";
+@import "../scss/time";
 
 html {
   @extend %fontfamily;
