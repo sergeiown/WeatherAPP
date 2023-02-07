@@ -1,7 +1,9 @@
 import getDomVariables from "./dom_variables.js";
 import { cycleButtonColors } from "./colored_button.js";
 import { getCountries } from "./country_list.js";
-import { clearWidget } from "./clear_widget.js";
+import { clearWidget } from "./widget_clear.js";
+import { checkCookie } from "./cookie_check.js";
+import { showWidget } from "./widget_visible.js";
 
 const variables = getDomVariables();
 
@@ -9,10 +11,11 @@ cycleButtonColors();
 
 getCountries();
 
-/* Wait for user input and show preloader after submit */
+/* Wait for user input and */
 variables.form.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  /* Show preloader after submit */
   variables.modal.innerHTML = variables.preloader;
   variables.modal.showModal();
 
@@ -22,41 +25,12 @@ variables.form.addEventListener("submit", (event) => {
 
   clearWidget();
 
-  /* Check if forecast is stored in cookies */
-  const cookie = document.cookie
-    .split("; ")
-    .find((item) => item.startsWith("forecast="));
-
-  if (cookie) {
-    const cookieData = JSON.parse(cookie.split("=")[1]);
-    const cookieSavedTime = new Date(cookieData.time);
-
-    /* Check if stored forecast is for the same city&country and if it's not older than 10 minutes */
-    if (
-      cookieData.city === city &&
-      cookieData.country === country &&
-      now - cookieSavedTime < 600000
-    ) {
-      console.log(cookie);
-
-      variables.currentTemp.textContent = cookieData.temp;
-      variables.weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${cookieData.icon}@2x.png" alt="Weather icon">`;
-      variables.currentStatus.textContent = cookieData.forecast;
-      variables.feelsLike.textContent = `Feels like: ${cookieData.tempFeelsLike}`;
-      variables.humidity.textContent = `Humidity: ${cookieData.humiditySource}`;
-      variables.wind.textContent = `Wind speed: ${cookieData.windSource}`;
-      variables.sunrise.textContent = `Sunrise at ${cookieData.sunriseSource}`;
-      variables.sunset.textContent = `Sunset at ${cookieData.sunsetSource}`;
-      variables.cookieTime.textContent = `Last update: ${cookieSavedTime.toLocaleString()}`;
-      variables.updateTime.textContent = `Saved data is shown`;
-
-      variables.modal.close();
-
-      return;
-    }
+  /* Check if forecast is stored in cookies and has the same city&country and if it's not older than 10 minutes. Show widget if if everything is okay */
+  if (checkCookie(city, country, now)) {
+    return;
   }
 
-  /* If forecast is not stored in cookies or is outdated, fetch it from the server */
+  /* If forecast is not stored in cookies or is outdated, fetch it from the server API */
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
       city
@@ -98,10 +72,7 @@ variables.form.addEventListener("submit", (event) => {
       variables.updateTime.textContent = `Last update: ${now.toLocaleString()}`;
 
       /* Make forecast visible and close preloader */
-      const elements = [variables.container, variables.timeContainer];
-      elements.forEach((element) => {
-        element.style.visibility = "visible";
-      });
+      showWidget();
 
       variables.modal.close();
 
