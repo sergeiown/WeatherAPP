@@ -1,7 +1,9 @@
 const form = document.querySelector("#form");
-const select = document.querySelector("#country");
+const cityName = document.querySelector("#city");
+const countrySelect = document.querySelector("#country");
 const button = document.querySelector("button");
 const modal = document.querySelector(".modal");
+const preloader = `<img src="./img/preloader.svg" alt="Loading..." />`;
 const container = document.querySelector(".container");
 const currentTemp = document.querySelector("#currentTemp");
 const weatherIcon = document.querySelector("#weatherIcon");
@@ -15,12 +17,14 @@ const timeContainer = document.querySelector(".time");
 const updateTime = document.querySelector("#updateTime");
 const cookieTime = document.querySelector("#savedTime");
 
-export default function getVariables() {
+export default function getDomVariables() {
   return {
     form,
-    select,
+    cityName,
+    countrySelect,
     button,
     modal,
+    preloader,
     container,
     currentTemp,
     weatherIcon,

@@ -1,78 +1,26 @@
-import getVariables from "./variables.js";
+import getDomVariables from "./dom_variables.js";
+import { cycleButtonColors } from "./colored_button.js";
+import { getCountries } from "./country_list.js";
+import { clearWidget } from "./clear_widget.js";
 
-const {
-  form,
-  select,
-  button,
-  modal,
-  container,
-  currentTemp,
-  weatherIcon,
-  currentStatus,
-  feelsLike,
-  humidity,
-  wind,
-  sunrise,
-  sunset,
-  timeContainer,
-  updateTime,
-  cookieTime,
-} = getVariables();
+const variables = getDomVariables();
 
-/* make the button visible enough for the user */
-const buttonColors = [
-  "red",
-  "orange",
-  "yellow",
-  "green",
-  "blue",
-  "indigo",
-  "violet",
-];
+cycleButtonColors();
 
-let colorIndex = 0;
-setInterval(() => {
-  button.style.color = buttonColors[colorIndex % buttonColors.length];
-  colorIndex++;
-}, 1000);
-
-/* Read the list of countries and make select>option */
-fetch("./data/countries.json")
-  .then((response) => response.json())
-  .then((countries) => {
-    countries.forEach((country) => {
-      const option = document.createElement("option");
-      option.value = country["alpha-2"];
-      option.text = country.name;
-      select.add(option);
-    });
-  });
+getCountries();
 
 /* Wait for user input and show preloader after submit */
-form.addEventListener("submit", (event) => {
+variables.form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  modal.innerHTML = `<img src="./img/preloader.svg" alt="Loading..." />`;
-  modal.showModal();
+  variables.modal.innerHTML = variables.preloader;
+  variables.modal.showModal();
 
-  const city = document.querySelector("#city").value.trim();
-  const country = select.value;
+  const city = variables.cityName.value.trim();
+  const country = variables.countrySelect.value;
   const now = new Date();
 
-  const elements = [
-    currentTemp,
-    currentStatus,
-    feelsLike,
-    humidity,
-    wind,
-    sunrise,
-    sunset,
-    updateTime,
-    cookieTime,
-  ];
-  elements.forEach((element) => {
-    element.textContent = "";
-  });
+  clearWidget();
 
   /* Check if forecast is stored in cookies */
   const cookie = document.cookie
@@ -91,18 +39,18 @@ form.addEventListener("submit", (event) => {
     ) {
       console.log(cookie);
 
-      currentTemp.textContent = cookieData.temp;
-      weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${cookieData.icon}@2x.png" alt="Weather icon">`;
-      currentStatus.textContent = cookieData.forecast;
-      feelsLike.textContent = `Feels like: ${cookieData.tempFeelsLike}`;
-      humidity.textContent = `Humidity: ${cookieData.humiditySource}`;
-      wind.textContent = `Wind speed: ${cookieData.windSource}`;
-      sunrise.textContent = `Sunrise at ${cookieData.sunriseSource}`;
-      sunset.textContent = `Sunset at ${cookieData.sunsetSource}`;
-      cookieTime.textContent = `Last update: ${cookieSavedTime.toLocaleString()}`;
-      updateTime.textContent = `Saved data is shown`;
+      variables.currentTemp.textContent = cookieData.temp;
+      variables.weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${cookieData.icon}@2x.png" alt="Weather icon">`;
+      variables.currentStatus.textContent = cookieData.forecast;
+      variables.feelsLike.textContent = `Feels like: ${cookieData.tempFeelsLike}`;
+      variables.humidity.textContent = `Humidity: ${cookieData.humiditySource}`;
+      variables.wind.textContent = `Wind speed: ${cookieData.windSource}`;
+      variables.sunrise.textContent = `Sunrise at ${cookieData.sunriseSource}`;
+      variables.sunset.textContent = `Sunset at ${cookieData.sunsetSource}`;
+      variables.cookieTime.textContent = `Last update: ${cookieSavedTime.toLocaleString()}`;
+      variables.updateTime.textContent = `Saved data is shown`;
 
-      modal.close();
+      variables.modal.close();
 
       return;
     }
@@ -139,23 +87,23 @@ form.addEventListener("submit", (event) => {
         data.sys.sunset * 1000
       ).toLocaleTimeString();
 
-      currentTemp.textContent = temp;
-      weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="Weather icon">`;
-      currentStatus.textContent = forecast;
-      feelsLike.textContent = `Feels like: ${tempFeelsLike}`;
-      humidity.textContent = `Humidity: ${humiditySource}`;
-      wind.textContent = `Wind speed: ${windSource}`;
-      sunrise.textContent = `Sunrise at ${sunriseSource}`;
-      sunset.textContent = `Sunset at ${sunsetSource}`;
-      updateTime.textContent = `Last update: ${now.toLocaleString()}`;
+      variables.currentTemp.textContent = temp;
+      variables.weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="Weather icon">`;
+      variables.currentStatus.textContent = forecast;
+      variables.feelsLike.textContent = `Feels like: ${tempFeelsLike}`;
+      variables.humidity.textContent = `Humidity: ${humiditySource}`;
+      variables.wind.textContent = `Wind speed: ${windSource}`;
+      variables.sunrise.textContent = `Sunrise at ${sunriseSource}`;
+      variables.sunset.textContent = `Sunset at ${sunsetSource}`;
+      variables.updateTime.textContent = `Last update: ${now.toLocaleString()}`;
 
       /* Make forecast visible and close preloader */
-      const elements = [container, timeContainer];
+      const elements = [variables.container, variables.timeContainer];
       elements.forEach((element) => {
         element.style.visibility = "visible";
       });
 
-      modal.close();
+      variables.modal.close();
 
       /* Save date to the cookie */
       document.cookie = `forecast=${JSON.stringify({
@@ -173,9 +121,9 @@ form.addEventListener("submit", (event) => {
       })}; max-age=600`;
     })
     .catch((error) => {
-      modal.textContent = error.message;
+      variables.modal.textContent = error.message;
       setTimeout(() => {
-        modal.close();
+        variables.modal.close();
       }, 3000);
     });
 });
