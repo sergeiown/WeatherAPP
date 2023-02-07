@@ -26,6 +26,7 @@ export function getSuggestions() {
                   city.name.toLowerCase().startsWith(inputValue.toLowerCase())
                 )
                 .map((city) => city.name)
+                .sort()
             ),
           ];
 
