@@ -52,7 +52,7 @@ fetch("./data/countries.json")
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  modal.textContent = `Loading...`;
+  modal.innerHTML = `<img src="./img/preloader.svg" alt="Loading..." />`;
   modal.showModal();
 
   const city = document.querySelector("#city").value.trim();

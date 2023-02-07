@@ -1,5 +1,7 @@
 dialog {
   @extend %title;
+  min-width: 10rem;
+  min-height: 10rem;
   position: absolute;
   top: 50%;
   left: 50%;
