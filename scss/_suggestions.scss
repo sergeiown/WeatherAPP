@@ -1,12 +1,14 @@
 .suggestions {
-  width: 10rem;
-  height: 25vh;
+  min-width: 15rem;
+  max-height: 25vh;
   overflow: auto;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba($color: #fff, $alpha: 0.9);
+  border-radius: 0.2rem;
+  padding: 0 0 0 0.2rem;
   z-index: 1;
 
   div {

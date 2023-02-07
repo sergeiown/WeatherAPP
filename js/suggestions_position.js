@@ -7,15 +7,17 @@ export function placeSuggestions(suggestionsContainer) {
 
   suggestionsContainer.style.left = `${
     variables.cityName.offsetLeft +
-    variables.cityName.offsetWidth +
-    window.pageXOffset
+    window.pageXOffset +
+    suggestionsContainer.offsetWidth / 2 +
+    5
   }px`;
 
   suggestionsContainer.style.top = `${
     variables.cityName.offsetTop +
     variables.cityName.offsetHeight +
     window.pageYOffset +
-    suggestionsContainer.offsetHeight / 3
+    suggestionsContainer.offsetHeight / 2 +
+    5
   }px`;
 
   suggestionsContainer.innerHTML = "";
