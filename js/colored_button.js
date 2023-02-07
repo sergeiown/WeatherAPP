@@ -4,17 +4,17 @@ import getDomVariables from "./dom_variables.js";
 
 const variables = getDomVariables();
 
-const buttonColors = [
-  "red",
-  "orange",
-  "yellow",
-  "green",
-  "blue",
-  "indigo",
-  "violet",
-];
-
 export function cycleButtonColors() {
+  const buttonColors = [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "indigo",
+    "violet",
+  ];
+
   let colorIndex = 0;
   setInterval(() => {
     variables.button.style.color =
