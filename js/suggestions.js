@@ -9,22 +9,29 @@ export function getSuggestions() {
   suggestionsContainer.style.display = "none";
   document.body.appendChild(suggestionsContainer);
 
+  /* Read the list of cities from json */
   fetch("./data/citylist.json")
     .then((response) => response.json())
     .then((cities) => {
       variables.cityName.addEventListener("input", (event) => {
         const inputValue = event.target.value;
 
+        /* Show suggestions when the number of letters entered is more than 3 */
         if (inputValue.length >= 3) {
-          const suggestions = cities
-            .filter((city) =>
-              city.name.toLowerCase().startsWith(inputValue.toLowerCase())
-            )
-            .map((city) => city.name);
+          const suggestions = [
+            ...new Set(
+              cities
+                .filter((city) =>
+                  city.name.toLowerCase().startsWith(inputValue.toLowerCase())
+                )
+                .map((city) => city.name)
+            ),
+          ];
 
           suggestionsContainer.style.display = "block";
           suggestionsContainer.innerHTML = "";
 
+          /* Add an array of suggestions with eventlisteners to the container */
           suggestions.forEach((suggestion) => {
             const suggestionItem = document.createElement("div");
             suggestionItem.innerHTML = suggestion;
@@ -42,6 +49,7 @@ export function getSuggestions() {
         }
       });
 
+      /* Hide suggestions when the input loses focus */
       variables.cityName.addEventListener("blur", () => {
         suggestionsContainer.style.display = "none";
       });

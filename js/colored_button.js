@@ -6,13 +6,14 @@ const variables = getDomVariables();
 
 export function cycleButtonColors() {
   const buttonColors = [
-    "red",
-    "orange",
-    "yellow",
-    "green",
-    "blue",
-    "indigo",
-    "violet",
+    "#1D3F72",
+    "#5699D2",
+    "#D8EBF9",
+    "#71C2CC",
+    "#4996A2",
+    "#785471",
+    "#E8CDC5",
+    "#EEE7D8",
   ];
 
   let colorIndex = 0;
