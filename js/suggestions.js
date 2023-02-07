@@ -1,3 +1,4 @@
+import { placeSuggestions } from "./suggestions_position.js";
 import getDomVariables from "./dom_variables.js";
 
 const variables = getDomVariables();
@@ -28,8 +29,8 @@ export function getSuggestions() {
             ),
           ];
 
-          suggestionsContainer.style.display = "block";
-          suggestionsContainer.innerHTML = "";
+          /* Place, make visible, clear suggestions */
+          placeSuggestions(suggestionsContainer);
 
           /* Add an array of suggestions with eventlisteners to the container */
           suggestions.forEach((suggestion) => {
