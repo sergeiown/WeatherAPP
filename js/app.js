@@ -1,17 +1,21 @@
 import getDomVariables from "./dom_variables.js";
-import { cycleButtonColors } from "./colored_button.js";
+import { getSuggestions } from "./suggestions.js";
 import { getCountries } from "./country_list.js";
+import { cycleButtonColors } from "./colored_button.js";
 import { clearWidget } from "./widget_clear.js";
 import { checkCookie } from "./cookie_check.js";
 import { getForecast } from "./forecast.js";
 
 const variables = getDomVariables();
 
-/* Style the form-submit button (change colors smoothly) */
-cycleButtonColors();
+/* Get a list of cities from an external file and display suggestions for the user during input */
+getSuggestions();
 
 /* Get a list of countries from an external file */
 getCountries();
+
+/* Style the form-submit button (change colors smoothly) */
+cycleButtonColors();
 
 /* Waiting for the user to submit the form */
 variables.form.addEventListener("submit", (event) => {

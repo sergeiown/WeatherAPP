@@ -1,0 +1,23 @@
+.suggestions {
+  width: fit-content;
+  height: fit-content;
+  max-height: 50vh;
+  overflow: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba($color: #fff, $alpha: 0.9);
+  z-index: 1;
+
+  div {
+    @extend %suggestions;
+    width: 100%;
+    height: fit-content;
+    &:hover {
+      @extend %suggestions-hover;
+      cursor: pointer;
+      background: #24588f;
+    }
+  }
+}
