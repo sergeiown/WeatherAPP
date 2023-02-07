@@ -1,6 +1,25 @@
-const form = document.querySelector("#form");
-const select = document.querySelector("#country");
-const button = document.querySelector("button");
+import getVariables from "./variables.js";
+
+const {
+  form,
+  select,
+  button,
+  modal,
+  container,
+  currentTemp,
+  weatherIcon,
+  currentStatus,
+  feelsLike,
+  humidity,
+  wind,
+  sunrise,
+  sunset,
+  timeContainer,
+  updateTime,
+  cookieTime,
+} = getVariables();
+
+/* make the button visible enough for the user */
 const buttonColors = [
   "red",
   "orange",
@@ -10,22 +29,7 @@ const buttonColors = [
   "indigo",
   "violet",
 ];
-const modal = document.querySelector(".modal");
-const container = document.querySelector(".container");
-const currentTemp = document.querySelector("#currentTemp");
-const weatherIcon = document.querySelector("#weatherIcon");
-const currentStatus = document.querySelector("#status");
-const feelsLike = document.querySelector("#feelsLike");
-const humidity = document.querySelector("#humidity");
-const wind = document.querySelector("#wind");
-const sunrise = document.querySelector("#sunrise");
-const sunset = document.querySelector("#sunset");
 
-const timeContainer = document.querySelector(".time");
-const updateTime = document.querySelector("#updateTime");
-const cookieTime = document.querySelector("#savedTime");
-
-/* make the button visible enough for the user */
 let colorIndex = 0;
 setInterval(() => {
   button.style.color = buttonColors[colorIndex % buttonColors.length];
