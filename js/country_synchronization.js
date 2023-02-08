@@ -2,6 +2,7 @@ import getDomVariables from "./dom_variables.js";
 
 const variables = getDomVariables();
 
+/* check which countries are suitable for the selected city */
 export function synchronizeСountry(cities) {
   const matchingCountries = [];
 
@@ -17,6 +18,7 @@ export function synchronizeСountry(cities) {
   return matchingCountries;
 }
 
+/* Reduce the list of countries added to the option */
 export function limitCountries(matchingCountries) {
   const countryOptions = variables.countrySelect.options;
   for (let i = 0; i < countryOptions.length; i++) {

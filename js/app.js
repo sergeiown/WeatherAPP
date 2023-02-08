@@ -38,4 +38,7 @@ variables.form.addEventListener("submit", (event) => {
 
   /* If forecast is not stored in cookies or is outdated, fetch it from the server API. Show widget if if everything is okay or show error */
   getForecast(city, country, now);
+
+  /* Get new list of countries */
+  getCountries();
 });

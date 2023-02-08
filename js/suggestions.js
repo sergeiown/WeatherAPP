@@ -44,9 +44,8 @@ export function getSuggestions() {
             suggestionItem.addEventListener("mousedown", (event) => {
               const clickedSuggestion = event.target;
 
-              /* Assigning selected city value and synchronizing country */
+              /* Assigning selected city value and synchronizing countries */
               variables.cityName.value = clickedSuggestion.textContent;
-              // synchronizeСountry(cities);
               limitCountries(synchronizeСountry(cities));
 
               suggestionsContainer.style.display = "none";
