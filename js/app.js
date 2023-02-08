@@ -1,6 +1,7 @@
 import getDomVariables from "./dom_variables.js";
 import { getSuggestions } from "./suggestions.js";
 import { getCountries } from "./country_list.js";
+import { clearForm } from "./form_clear.js";
 import { cycleButtonColors } from "./colored_button.js";
 import { clearWidget } from "./widget_clear.js";
 import { checkCookie } from "./cookie_check.js";
@@ -38,7 +39,6 @@ variables.form.addEventListener("submit", (event) => {
 
   /* If forecast is not stored in cookies or is outdated, fetch it from the server API. Show widget if if everything is okay or show error */
   getForecast(city, country, now);
-
-  /* Get new list of countries */
-  getCountries();
 });
+
+variables.clear.addEventListener("click", clearForm);

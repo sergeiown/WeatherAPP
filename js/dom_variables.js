@@ -1,7 +1,8 @@
 const form = document.querySelector("#form");
 const cityName = document.querySelector("#city");
 const countrySelect = document.querySelector("#country");
-const button = document.querySelector("button");
+const button = document.querySelector("button[type=submit]");
+const clear = document.querySelector("button[type=button]");
 const modal = document.querySelector(".modal");
 const preloader = `<img src="./img/preloader.svg" alt="Loading..." />`;
 const container = document.querySelector(".container");
@@ -23,6 +24,7 @@ export default function getDomVariables() {
     cityName,
     countrySelect,
     button,
+    clear,
     modal,
     preloader,
     container,

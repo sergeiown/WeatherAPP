@@ -4,7 +4,7 @@ import { limitCountries } from "./country_synchronization.js";
 import getDomVariables from "./dom_variables.js";
 
 const variables = getDomVariables();
-const submitEvent = new Event("submit");
+// const submitEvent = new Event("submit");
 
 export function getSuggestions() {
   const suggestionsContainer = document.createElement("div");
@@ -49,7 +49,7 @@ export function getSuggestions() {
               variables.cityName.value = clickedSuggestion.textContent;
               limitCountries(synchronizeСountry(cities));
               suggestionsContainer.style.display = "none";
-              variables.form.dispatchEvent(submitEvent);
+              // variables.form.dispatchEvent(submitEvent);
             });
           });
         } else {

@@ -44,8 +44,8 @@
   }
 
   button {
-    border: none;
     @extend %button-form;
+    border: none;
     transition: color 1s ease-in-out;
 
     &:hover {
@@ -54,6 +54,20 @@
 
     &:active {
       @extend %button-form-active;
+    }
+  }
+
+  .buttonWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button[type="submit"] {
+      flex-basis: 60%;
+    }
+
+    button[type="button"] {
+      flex-basis: 40%;
     }
   }
 }
