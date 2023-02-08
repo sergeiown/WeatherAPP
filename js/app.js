@@ -44,4 +44,5 @@ variables.form.addEventListener("submit", (event) => {
   getCountries();
 });
 
+/* Clear form data */
 variables.clear.addEventListener("click", clearForm);
