@@ -4,6 +4,7 @@ import { limitCountries } from "./country_synchronization.js";
 import getDomVariables from "./dom_variables.js";
 
 const variables = getDomVariables();
+const submitEvent = new Event("submit");
 
 export function getSuggestions() {
   const suggestionsContainer = document.createElement("div");
@@ -44,11 +45,11 @@ export function getSuggestions() {
             suggestionItem.addEventListener("mousedown", (event) => {
               const clickedSuggestion = event.target;
 
-              /* Assigning selected city value and synchronizing countries */
+              /* Assigning selected city value, synchronizing countries and submit the form */
               variables.cityName.value = clickedSuggestion.textContent;
               limitCountries(synchronizeСountry(cities));
-
               suggestionsContainer.style.display = "none";
+              variables.form.dispatchEvent(submitEvent);
             });
           });
         } else {
