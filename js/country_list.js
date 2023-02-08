@@ -8,6 +8,17 @@ export function getCountries() {
   fetch("./data/countries.json")
     .then((response) => response.json())
     .then((countries) => {
+      /* cleaning of previous elements */
+      while (variables.countrySelect.firstChild) {
+        variables.countrySelect.removeChild(variables.countrySelect.firstChild);
+      }
+      /* adding new elements */
+      const option = document.createElement("option");
+      option.value = "";
+      option.text = "Select a country *optional";
+      variables.countrySelect.add(option);
+      variables.countrySelect.value = "";
+
       countries.forEach((country) => {
         const option = document.createElement("option");
         option.value = country["alpha-2"];
