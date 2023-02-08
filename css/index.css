@@ -162,9 +162,11 @@ body {
 }
 
 .suggestions {
+  max-width: 15rem;
   min-width: 15rem;
   max-height: 25vh;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: absolute;
   left: 50%;
   top: 50%;

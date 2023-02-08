@@ -1,4 +1,6 @@
 import { placeSuggestions } from "./suggestions_position.js";
+import { synchronizeСountry } from "./country_synchronization.js";
+import { limitCountries } from "./country_synchronization.js";
 import getDomVariables from "./dom_variables.js";
 
 const variables = getDomVariables();
@@ -42,7 +44,11 @@ export function getSuggestions() {
             suggestionItem.addEventListener("mousedown", (event) => {
               const clickedSuggestion = event.target;
 
+              /* Assigning selected city value and synchronizing country */
               variables.cityName.value = clickedSuggestion.textContent;
+              // synchronizeСountry(cities);
+              limitCountries(synchronizeСountry(cities));
+
               suggestionsContainer.style.display = "none";
             });
           });
