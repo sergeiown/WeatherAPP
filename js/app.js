@@ -32,12 +32,12 @@ variables.form.addEventListener("submit", (event) => {
   const now = new Date();
   clearWidget();
 
-  /* Check if forecast is stored in cookies and has the same city&country and if it's not older than 10 minutes. Show widget if if everything is okay */
+  /* Check if forecast is stored in cookies and has the same city and if it's not older than 10 minutes. Show widget if everything is okay */
   if (checkCookie(city, country, now)) {
     return;
   }
 
-  /* If forecast is not stored in cookies or is outdated, fetch it from the server API. Show widget if if everything is okay or show error */
+  /* If forecast is not stored in cookies or is outdated, fetch it from the server API. Show widget if everything is okay or show error message */
   getForecast(city, country, now);
 
   /* Get new list of countries */
