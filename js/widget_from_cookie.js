@@ -22,8 +22,8 @@ export function fillWidgetWithCookie(
   /* Bring the city name entered by the user to the proper form (only for display in the widget) and add the time until which the saved forecast will be displayed */
   variables.updateTime.innerHTML = `Saved data for location <b>${city
     .toLowerCase()
-    .replace(/\b\w/g, (l) =>
-      l.toUpperCase()
+    .replace(/\b\w/g, (firstLetter) =>
+      firstLetter.toUpperCase()
     )}</b> will be displayed until <b>${cookieSavedTimeUntil.toLocaleTimeString()}</b>`;
 
   return;
