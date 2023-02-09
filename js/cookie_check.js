@@ -1,6 +1,7 @@
 /* Check if stored forecast is for the same city&country and if it's not older than 10 minutes */
 
 import { fillWidgetWithCookie } from "./widget_from_cookie.js";
+import { showWidget } from "./widget_visible.js";
 import getDomVariables from "./dom_variables.js";
 
 const variables = getDomVariables();
@@ -17,10 +18,14 @@ export function checkCookie(city, country, now) {
 
     /* Check if stored forecast is for the same city and if it's not older than 10 minutes */
     if (cookieData.city === city && now - cookieSavedTime < 600000) {
-      console.log(cookie);
+      console.log("Saved cookie :");
+      console.table(cookieData);
 
       /* Fill the widget with data from cookies */
       fillWidgetWithCookie(cookieData, cookieSavedTime);
+
+      /* Make forecast visible and close preloader */
+      showWidget();
 
       variables.modal.close();
 

@@ -14,7 +14,7 @@ export function synchronizeСountry(cities) {
       matchingCountries.push(city.country);
     }
   }
-  console.log(matchingCountries);
+  // console.log(matchingCountries);
   return matchingCountries;
 }
 

@@ -2,6 +2,7 @@ import getDomVariables from "./dom_variables.js";
 import { getSuggestions } from "./suggestions.js";
 import { getCountries } from "./country_list.js";
 import { clearForm } from "./form_clear.js";
+import { hideWidget } from "./widget_invisible.js";
 import { cycleButtonColors } from "./colored_button.js";
 import { clearWidget } from "./widget_clear.js";
 import { checkCookie } from "./cookie_check.js";
@@ -25,6 +26,9 @@ variables.form.addEventListener("submit", (event) => {
   /* Show preloader after submit */
   variables.modal.innerHTML = variables.preloader;
   variables.modal.showModal();
+
+  /* Hide the widget if it was opened earlier */
+  hideWidget();
 
   /* Save the form data and clear the widget */
   const city = variables.cityName.value.trim();
