@@ -13,11 +13,14 @@ const variables = getDomVariables();
 /* Get a list of cities from an external file and display suggestions for the user during input */
 getSuggestions();
 
-/* Get a list of countries from an external file */
+/* Get an initial list of countries */
 getCountries();
 
 /* Style the form-submit button (change colors smoothly) */
 cycleButtonColors();
+
+/* Get a new country list each time a new city name is entered */
+variables.cityName.addEventListener("focus", getCountries);
 
 /* Waiting for the user to submit the form */
 variables.form.addEventListener("submit", (event) => {
@@ -43,9 +46,6 @@ variables.form.addEventListener("submit", (event) => {
 
   /* If forecast is not stored in cookies or is outdated, fetch it from the server API. Show widget if everything is okay or show error message */
   getForecast(city, country, now);
-
-  /* Get new list of countries */
-  getCountries();
 });
 
 /* Clear form data */
