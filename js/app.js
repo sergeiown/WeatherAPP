@@ -34,7 +34,7 @@ variables.form.addEventListener("submit", (event) => {
   hideWidget();
 
   /* Save the form data and clear the widget */
-  const city = variables.cityName.value.trim();
+  const city = variables.cityName.value.toLowerCase().trim();
   const country = variables.countrySelect.value;
   const now = new Date();
   clearWidget();

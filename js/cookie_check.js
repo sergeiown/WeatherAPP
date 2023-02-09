@@ -20,18 +20,17 @@ export function checkCookie(city, country, now) {
     const cookieSavedTimeUntil = new Date(cookieData.time);
     cookieSavedTimeUntil.setMinutes(cookieSavedTimeUntil.getMinutes() + 10);
 
-    /* Check if stored forecast is for the same city (the country has not been used yet) and if it's not older than 10 minutes */
-    if (cookieData.city === city && now - cookieSavedTime < 600000) {
+    /* Check if stored forecast is for the same city&country and if it's not older than 10 minutes */
+    if (
+      cookieData.city === city &&
+      cookieData.country === country &&
+      now - cookieSavedTime < 600000
+    ) {
       console.log("Saved cookie :");
       console.table(cookieData);
 
       /* Fill the widget with data from cookies */
-      fillWidgetWithCookie(
-        cookieData,
-        cookieSavedTime,
-        city,
-        cookieSavedTimeUntil
-      );
+      fillWidgetWithCookie(cookieData, cookieSavedTime, cookieSavedTimeUntil);
 
       /* Make forecast visible and close preloader */
       showWidget();
