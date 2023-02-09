@@ -16,13 +16,22 @@ export function checkCookie(city, country, now) {
     const cookieData = JSON.parse(cookie.split("=")[1]);
     const cookieSavedTime = new Date(cookieData.time);
 
-    /* Check if stored forecast is for the same city and if it's not older than 10 minutes */
+    /* Add 10 minutes to the time of cookie storage for displaying in the widget */
+    const cookieSavedTimeUntil = new Date(cookieData.time);
+    cookieSavedTimeUntil.setMinutes(cookieSavedTimeUntil.getMinutes() + 10);
+
+    /* Check if stored forecast is for the same city (the country has not been used yet) and if it's not older than 10 minutes */
     if (cookieData.city === city && now - cookieSavedTime < 600000) {
       console.log("Saved cookie :");
       console.table(cookieData);
 
       /* Fill the widget with data from cookies */
-      fillWidgetWithCookie(cookieData, cookieSavedTime);
+      fillWidgetWithCookie(
+        cookieData,
+        cookieSavedTime,
+        city,
+        cookieSavedTimeUntil
+      );
 
       /* Make forecast visible and close preloader */
       showWidget();

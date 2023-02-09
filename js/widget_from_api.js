@@ -16,7 +16,7 @@ export function fillWidgetWithApi(city, country, data, now) {
   const sunsetSource = new Date(data.sys.sunset * 1000).toLocaleTimeString();
 
   variables.currentTemp.textContent = temp;
-  variables.weatherIcon.innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="Weather icon">`;
+  variables.weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="Weather icon">`;
   variables.currentStatus.textContent = forecast;
   variables.feelsLike.textContent = `Feels like: ${tempFeelsLike}`;
   variables.humidity.textContent = `Humidity: ${humiditySource}`;

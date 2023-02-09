@@ -13,11 +13,12 @@ body {
   background: url(../img/bg.svg) top left / cover no-repeat;
 
   @media only screen and (max-width: 1200px) and (orientation: landscape) {
-    height: 99vh;
+    height: 100vh;
     margin: auto 0;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
+    padding: 1rem 0;
   }
 
   @media only screen and (max-width: 1200px) and (orientation: portrait) {
