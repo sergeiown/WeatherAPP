@@ -19,6 +19,7 @@ export function fillWidgetWithCookie(
   variables.sunrise.textContent = `Sunrise at ${cookieData.sunriseSource}`;
   variables.sunset.textContent = `Sunset at ${cookieData.sunsetSource}`;
   variables.cookieTime.textContent = `The last update from the server: ${cookieSavedTime.toLocaleString()}`;
+  /* Bring the city name entered by the user to the proper form (only for display in the widget) and add the time until which the saved forecast will be displayed */
   variables.updateTime.innerHTML = `Saved data for location <b>${city
     .toLowerCase()
     .replace(/\b\w/g, (l) =>
