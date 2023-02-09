@@ -1,15 +1,19 @@
 # Get Weather App
 
-Weather forecast with search by city name and country using [ISO 3166 Regional Codes.](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes)
+![screenshot](./img/dependencies.png)
 
-Search by city is implemented with suggestions of options when the user enters the name. Data is stored in external json files. 
+Functionality:
 
-Synchronization between selected city and the countries corresponding to the choice has been implemented.
+- Weather forecast with search by city name and country using [ISO 3166 Regional Codes.](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes)
 
-Fetch requests to the [openweathermap](https://openweathermap.org/api) api are used.
+- Search by city is implemented with suggestions of options when the user enters the name. Data is stored in external json files. 
 
-Forecast data is stored and displayed with cookies.
+- Synchronization between selected city and the countries corresponding to the choice has been implemented.
 
-After 10 minutes fresh data is requested.
+- Fetch requests to the [openweathermap](https://openweathermap.org/api) api are used.
 
-![screenshot](./img/dependencies.png) ![screenshot](./img/screenshot.png)
+- Forecast data is stored and displayed with cookies.
+
+- After 10 minutes fresh data is requested.
+
+![screenshot](./img/screenshot.png)
