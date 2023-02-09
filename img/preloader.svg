@@ -5,9 +5,9 @@
       xmlns:xlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      width="100"
-      height="100"
-      viewBox="0 0 100 100"
+      width="300"
+      height="300"
+      viewBox="0 0 60 100"
       enable-background="new 0 0 0 0"
       xml:space="preserve"
     >
@@ -22,7 +22,7 @@
         />
         <animate
           attributeName="fill"
-          values="white; darkblue; white"
+          values="white; blue; white"
           dur="2s"
           repeatCount="indefinite"
           keySplines="0.5 0 0.5 1"
@@ -39,7 +39,7 @@
         />
         <animate
           attributeName="fill"
-          values="white; darkblue; white"
+          values="white; blue; white"
           dur="2s"
           repeatCount="indefinite"
           keySplines="0.5 0 0.5 1"
@@ -56,7 +56,7 @@
         />
         <animate
           attributeName="fill"
-          values="white; darkblue; white"
+          values="white; blue; white"
           dur="2s"
           repeatCount="indefinite"
           keySplines="0.5 0 0.5 1"
