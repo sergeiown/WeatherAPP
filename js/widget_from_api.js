@@ -23,7 +23,7 @@ export function fillWidgetWithApi(city, country, data, now) {
   variables.wind.textContent = `Wind speed: ${windSource}`;
   variables.sunrise.textContent = `Sunrise at ${sunriseSource}`;
   variables.sunset.textContent = `Sunset at ${sunsetSource}`;
-  variables.updateTime.textContent = `Last update: ${now.toLocaleString()}`;
+  variables.updateTime.textContent = `The latest forecast update: ${now.toLocaleString()}`;
 
   /* Save data from api response */
   saveCookie(
