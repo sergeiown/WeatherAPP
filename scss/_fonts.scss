@@ -11,6 +11,14 @@
   color: #0e2a47;
   text-shadow: 0 0 1rem #fff;
   text-align: center;
+
+  @media only screen and (max-width: 1200px) and (orientation: landscape) {
+    font-size: 4rem;
+  }
+
+  @media only screen and (max-width: 1200px) and (orientation: portrait) {
+    font-size: 3rem;
+  }
 }
 
 %subtitle {

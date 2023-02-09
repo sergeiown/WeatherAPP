@@ -22,7 +22,7 @@
         />
         <animate
           attributeName="fill"
-          values="white; blue; white"
+          values="#fff; #24588f; #fff"
           dur="2s"
           repeatCount="indefinite"
           keySplines="0.5 0 0.5 1"
@@ -39,7 +39,7 @@
         />
         <animate
           attributeName="fill"
-          values="white; blue; white"
+          values="#fff; #24588f; #fff"
           dur="2s"
           repeatCount="indefinite"
           keySplines="0.5 0 0.5 1"
@@ -56,7 +56,7 @@
         />
         <animate
           attributeName="fill"
-          values="white; blue; white"
+          values="#fff; #24588f; #fff"
           dur="2s"
           repeatCount="indefinite"
           keySplines="0.5 0 0.5 1"
