@@ -1,16 +1,21 @@
-/* Check if the Safari browser is in use and the version of that browser. Use the navigator.userAgent property which contains a string with information about the browser. */
+/* Check if the Safari browser is in use and the version of iOS. Use the navigator.userAgent. */
 
-function isOldSafari() {
+function isOldIOS() {
   let ua = navigator.userAgent;
-  let isSafari = /^((?!chrome|android).)*safari/i.test(ua);
-  let isOldIOS = /OS [1-6](.*) like Mac/i.test(ua);
 
-  return isSafari && isOldIOS;
+  /* matches "safari" but not "chrome" or "android" */
+  let isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+  /* matches iOS versions 1.0 through 9.9 */
+  let isOldIOS = /OS [1-9]_[0-9](.*) like Mac/i.test(ua);
+  /* matches iOS versions 10.0 through 10.3 */
+  let isIOS10 = /OS 10_[0-3](.*) like Mac/i.test(ua);
+
+  return isSafari && (isOldIOS || isIOS10);
 }
 
 console.clear();
 
-if (!isOldSafari()) {
+if (!isOldIOS()) {
   var script = document.createElement("script");
   script.src = "./js/app.js";
   script.type = "module";
