@@ -14,6 +14,8 @@ export function fillWidgetWithCookie(cookieData, cookieSavedTime, cookieSavedTim
   variables.sunset.textContent = "Sunset at ".concat(cookieData.sunsetSource);
   variables.cookieTime.textContent = "The latest update from the server: ".concat(cookieSavedTime.toLocaleString());
   /* Bring the city name entered by the user to the proper form (only for display in the widget) and add the time until which the saved forecast will be displayed */
-  variables.updateTime.innerHTML = "Saved data for <b>".concat(cookieData.city.replace(/\b\w/g, firstLetter => firstLetter.toUpperCase()), " ").concat(cookieData.country, "</b> will be displayed until <b>").concat(cookieSavedTimeUntil.toLocaleTimeString(), "</b>");
+  variables.updateTime.innerHTML = "Saved data for <b>".concat(cookieData.city.replace(/\b\w/g, function (firstLetter) {
+    return firstLetter.toUpperCase();
+  }), " ").concat(cookieData.country, "</b> will be displayed until <b>").concat(cookieSavedTimeUntil.toLocaleTimeString(), "</b>");
   return;
 }

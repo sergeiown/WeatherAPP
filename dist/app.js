@@ -24,7 +24,7 @@ cycleButtonColors();
 variables.cityName.addEventListener("focus", getCountries);
 
 /* Waiting for the user to submit the form */
-variables.form.addEventListener("submit", event => {
+variables.form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   /* Show preloader after submit */

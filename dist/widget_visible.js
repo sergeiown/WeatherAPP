@@ -5,7 +5,7 @@ import { getDomVariables } from "./dom_variables.js";
 var variables = getDomVariables();
 export function showWidget() {
   var elements = [variables.container, variables.timeContainer];
-  elements.forEach(element => {
+  elements.forEach(function (element) {
     element.style.visibility = "visible";
   });
 }

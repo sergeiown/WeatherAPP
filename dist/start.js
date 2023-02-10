@@ -7,7 +7,7 @@ function isOldSafari() {
   return isSafari && isOldIOS;
 }
 console.clear();
-if (isOldSafari()) {
+if (!isOldSafari()) {
   var script = document.createElement("script");
   script.src = "./js/app.js";
   script.type = "module";

@@ -4,7 +4,9 @@
 import { getDomVariables } from "./dom_variables.js";
 var variables = getDomVariables();
 export function getCountries() {
-  fetch("./data/countries.json").then(response => response.json()).then(countries => {
+  fetch("./data/countries.json").then(function (response) {
+    return response.json();
+  }).then(function (countries) {
     /* cleaning of previous elements */
     while (variables.countrySelect.firstChild) {
       variables.countrySelect.removeChild(variables.countrySelect.firstChild);
@@ -15,7 +17,7 @@ export function getCountries() {
     option.text = "Select a country *optional";
     variables.countrySelect.add(option);
     variables.countrySelect.value = "";
-    countries.forEach(country => {
+    countries.forEach(function (country) {
       var option = document.createElement("option");
       option.value = country["alpha-2"];
       option.text = country.name;

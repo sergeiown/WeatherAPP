@@ -7,7 +7,9 @@ import { getDomVariables } from "./dom_variables.js";
 var variables = getDomVariables();
 export function checkCookie(city, country, now) {
   /* Check if forecast is stored in cookies */
-  var cookie = document.cookie.split("; ").find(item => item.startsWith("forecast="));
+  var cookie = document.cookie.split("; ").find(function (item) {
+    return item.startsWith("forecast=");
+  });
   if (cookie) {
     var cookieData = JSON.parse(cookie.split("=")[1]);
     var cookieSavedTime = new Date(cookieData.time);

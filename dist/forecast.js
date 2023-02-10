@@ -7,8 +7,8 @@ import { getDomVariables } from "./dom_variables.js";
 var variables = getDomVariables();
 export function getForecast(city, country, now) {
   /* Timeout for a response for 10 seconds and then generate an error */
-  var timeout = new Promise((resolve, reject) => {
-    setTimeout(() => {
+  var timeout = new Promise(function (resolve, reject) {
+    setTimeout(function () {
       reject(new Error("Request timed out. Please try again later."));
     }, 10000);
   });
@@ -17,12 +17,12 @@ export function getForecast(city, country, now) {
   var apiRequest = fetch("https://api.openweathermap.org/data/2.5/weather?q=".concat(encodeURIComponent(city), ",").concat(encodeURIComponent(country), "&units=metric&appid=cf56fb7d05b9d81a18cb8aa28abe286a"));
 
   /* Use "Promise.race" which allows to determine which promise will end first. */
-  Promise.race([timeout, apiRequest]).then(response => {
+  Promise.race([timeout, apiRequest]).then(function (response) {
     if (!response.ok) {
       throw new Error("City not found!");
     }
     return response.json();
-  }).then(data => {
+  }).then(function (data) {
     console.log("API response :");
     console.log(data);
 
@@ -34,10 +34,10 @@ export function getForecast(city, country, now) {
 
     /* Close preloader */
     variables.modal.close();
-  }).catch(error => {
+  }).catch(function (error) {
     /* show the error for 3 seconds */
     variables.modal.textContent = error.message;
-    setTimeout(() => {
+    setTimeout(function () {
       variables.modal.close();
     }, 3000);
   });

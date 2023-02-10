@@ -5,7 +5,7 @@
       {
         "targets": {
           "node": "current",
-          "ios": "10"
+          "ios": "6"
         },
         "modules": false
       }

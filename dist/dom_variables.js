@@ -21,24 +21,24 @@ var updateTime = document.querySelector("#updateTime");
 var cookieTime = document.querySelector("#savedTime");
 export function getDomVariables() {
   return {
-    form,
-    cityName,
-    countrySelect,
-    button,
-    clear,
-    modal,
-    preloader,
-    container,
-    currentTemp,
-    weatherIcon,
-    currentStatus,
-    feelsLike,
-    humidity,
-    wind,
-    sunrise,
-    sunset,
-    timeContainer,
-    updateTime,
-    cookieTime
+    form: form,
+    cityName: cityName,
+    countrySelect: countrySelect,
+    button: button,
+    clear: clear,
+    modal: modal,
+    preloader: preloader,
+    container: container,
+    currentTemp: currentTemp,
+    weatherIcon: weatherIcon,
+    currentStatus: currentStatus,
+    feelsLike: feelsLike,
+    humidity: humidity,
+    wind: wind,
+    sunrise: sunrise,
+    sunset: sunset,
+    timeContainer: timeContainer,
+    updateTime: updateTime,
+    cookieTime: cookieTime
   };
 }
