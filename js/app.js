@@ -12,8 +12,6 @@ import { getForecast } from "./forecast.js";
 
 const variables = getDomVariables();
 
-console.clear();
-
 /* Get a list of cities from an external file and display suggestions for the user during input */
 getSuggestions();
 
