@@ -7,8 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.fillWidgetWithApi = fillWidgetWithApi;
 var _dom_variables = _interopRequireDefault(require("./dom_variables.js"));
 var _cookie_save = require("./cookie_save.js");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var variables = (0, _dom_variables["default"])();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var variables = (0, _dom_variables.default)();
 function fillWidgetWithApi(city, country, data, now) {
   var forecast = "it's ".concat(data.weather[0].description, " in ").concat(data.name, ", ").concat(data.sys.country);
   var icon = data.weather[0].icon;

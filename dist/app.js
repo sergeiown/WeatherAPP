@@ -9,10 +9,8 @@ var _colored_button = require("./colored_button.js");
 var _widget_clear = require("./widget_clear.js");
 var _cookie_check = require("./cookie_check.js");
 var _forecast = require("./forecast.js");
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-var variables = (0, _dom_variables["default"])();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var variables = (0, _dom_variables.default)();
 
 /* Get a list of cities from an external file and display suggestions for the user during input */
 (0, _suggestions.getSuggestions)();

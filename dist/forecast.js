@@ -8,8 +8,8 @@ exports.getForecast = getForecast;
 var _widget_visible = require("./widget_visible.js");
 var _widget_from_api = require("./widget_from_api.js");
 var _dom_variables = _interopRequireDefault(require("./dom_variables.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var variables = (0, _dom_variables["default"])();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var variables = (0, _dom_variables.default)();
 function getForecast(city, country, now) {
   /* Timeout for a response for 10 seconds and then generate an error */
   var timeout = new Promise(function (resolve, reject) {
@@ -39,7 +39,7 @@ function getForecast(city, country, now) {
 
     /* Close preloader */
     variables.modal.close();
-  })["catch"](function (error) {
+  }).catch(function (error) {
     /* show the error for 3 seconds */
     variables.modal.textContent = error.message;
     setTimeout(function () {

@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.fillWidgetWithCookie = fillWidgetWithCookie;
 var _dom_variables = _interopRequireDefault(require("./dom_variables.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var variables = (0, _dom_variables["default"])();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var variables = (0, _dom_variables.default)();
 function fillWidgetWithCookie(cookieData, cookieSavedTime, cookieSavedTimeUntil) {
   variables.currentTemp.textContent = cookieData.temp;
   variables.weatherIcon.innerHTML = "<img src=\"https://openweathermap.org/img/wn/".concat(cookieData.icon, "@2x.png\" alt=\"Weather icon\">");

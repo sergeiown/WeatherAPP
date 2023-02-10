@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = getDomVariables;
+exports.default = getDomVariables;
 var form = document.querySelector("#form");
 var cityName = document.querySelector("#city");
 var countrySelect = document.querySelector("#country");

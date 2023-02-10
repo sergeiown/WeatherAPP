@@ -8,8 +8,8 @@ exports.checkCookie = checkCookie;
 var _widget_from_cookie = require("./widget_from_cookie.js");
 var _widget_visible = require("./widget_visible.js");
 var _dom_variables = _interopRequireDefault(require("./dom_variables.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-var variables = (0, _dom_variables["default"])();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var variables = (0, _dom_variables.default)();
 function checkCookie(city, country, now) {
   /* Check if forecast is stored in cookies */
   var cookie = document.cookie.split("; ").find(function (item) {
