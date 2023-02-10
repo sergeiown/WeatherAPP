@@ -1,5 +1,3 @@
-"use strict";
-
 /* Check if the Safari browser is in use and the version of that browser. Use the navigator.userAgent property which contains a string with information about the browser. */
 
 function isOldSafari() {
@@ -9,7 +7,7 @@ function isOldSafari() {
   return isSafari && isOldIOS;
 }
 console.clear();
-if (!isOldSafari()) {
+if (isOldSafari()) {
   var script = document.createElement("script");
   script.src = "./js/app.js";
   script.type = "module";

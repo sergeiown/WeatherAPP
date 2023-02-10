@@ -1,6 +1,6 @@
 "use strict";
 
-import getDomVariables from "./dom_variables.js";
+import { getDomVariables } from "./dom_variables.js";
 import { getSuggestions } from "./suggestions.js";
 import { getCountries } from "./country_list.js";
 import { clearForm } from "./form_clear.js";

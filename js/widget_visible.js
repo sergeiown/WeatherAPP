@@ -1,7 +1,7 @@
 "use strict";
 
 /* Make forecast visible and close preloader */
-import getDomVariables from "./dom_variables.js";
+import { getDomVariables } from "./dom_variables.js";
 
 const variables = getDomVariables();
 

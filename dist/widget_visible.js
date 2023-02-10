@@ -1,16 +1,11 @@
 "use strict";
 
 /* Make forecast visible and close preloader */
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.showWidget = showWidget;
-var _dom_variables = _interopRequireDefault(require("./dom_variables.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var variables = (0, _dom_variables.default)();
-function showWidget() {
+import { getDomVariables } from "./dom_variables.js";
+var variables = getDomVariables();
+export function showWidget() {
   var elements = [variables.container, variables.timeContainer];
-  elements.forEach(function (element) {
+  elements.forEach(element => {
     element.style.visibility = "visible";
   });
 }

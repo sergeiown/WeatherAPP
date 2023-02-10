@@ -4,8 +4,10 @@
       "@babel/preset-env",
       {
         "targets": {
-          "ios": "7"
-        }
+          "node": "current",
+          "ios": "10"
+        },
+        "modules": false
       }
     ]
   ]

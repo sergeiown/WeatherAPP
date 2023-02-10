@@ -2,7 +2,7 @@
 
 /* Fill the widget with data from api response */
 
-import getDomVariables from "./dom_variables.js";
+import { getDomVariables } from "./dom_variables.js";
 import { saveCookie } from "./cookie_save.js";
 
 const variables = getDomVariables();

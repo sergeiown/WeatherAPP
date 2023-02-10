@@ -3,7 +3,7 @@
 import { placeSuggestions } from "./suggestions_position.js";
 import { synchronizeСountry } from "./country_synchronization.js";
 import { limitCountries } from "./country_synchronization.js";
-import getDomVariables from "./dom_variables.js";
+import { getDomVariables } from "./dom_variables.js";
 
 const variables = getDomVariables();
 

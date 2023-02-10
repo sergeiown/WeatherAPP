@@ -1,9 +1,5 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = getDomVariables;
 var form = document.querySelector("#form");
 var cityName = document.querySelector("#city");
 var countrySelect = document.querySelector("#country");
@@ -23,26 +19,26 @@ var sunset = document.querySelector("#sunset");
 var timeContainer = document.querySelector(".time");
 var updateTime = document.querySelector("#updateTime");
 var cookieTime = document.querySelector("#savedTime");
-function getDomVariables() {
+export function getDomVariables() {
   return {
-    form: form,
-    cityName: cityName,
-    countrySelect: countrySelect,
-    button: button,
-    clear: clear,
-    modal: modal,
-    preloader: preloader,
-    container: container,
-    currentTemp: currentTemp,
-    weatherIcon: weatherIcon,
-    currentStatus: currentStatus,
-    feelsLike: feelsLike,
-    humidity: humidity,
-    wind: wind,
-    sunrise: sunrise,
-    sunset: sunset,
-    timeContainer: timeContainer,
-    updateTime: updateTime,
-    cookieTime: cookieTime
+    form,
+    cityName,
+    countrySelect,
+    button,
+    clear,
+    modal,
+    preloader,
+    container,
+    currentTemp,
+    weatherIcon,
+    currentStatus,
+    feelsLike,
+    humidity,
+    wind,
+    sunrise,
+    sunset,
+    timeContainer,
+    updateTime,
+    cookieTime
   };
 }

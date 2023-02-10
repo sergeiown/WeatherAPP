@@ -2,7 +2,7 @@
 
 /* Clearing the widget elements */
 
-import getDomVariables from "./dom_variables.js";
+import { getDomVariables } from "./dom_variables.js";
 
 const variables = getDomVariables();
 

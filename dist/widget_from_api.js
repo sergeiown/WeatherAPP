@@ -1,15 +1,10 @@
 "use strict";
 
 /* Fill the widget with data from api response */
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.fillWidgetWithApi = fillWidgetWithApi;
-var _dom_variables = _interopRequireDefault(require("./dom_variables.js"));
-var _cookie_save = require("./cookie_save.js");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-var variables = (0, _dom_variables.default)();
-function fillWidgetWithApi(city, country, data, now) {
+import { getDomVariables } from "./dom_variables.js";
+import { saveCookie } from "./cookie_save.js";
+var variables = getDomVariables();
+export function fillWidgetWithApi(city, country, data, now) {
   var forecast = "it's ".concat(data.weather[0].description, " in ").concat(data.name, ", ").concat(data.sys.country);
   var icon = data.weather[0].icon;
   var temp = "".concat(Math.round(data.main.temp), " \xB0C");
@@ -29,5 +24,5 @@ function fillWidgetWithApi(city, country, data, now) {
   variables.updateTime.textContent = "The latest forecast update: ".concat(now.toLocaleString());
 
   /* Save data from api response */
-  (0, _cookie_save.saveCookie)(temp, icon, city, country, forecast, tempFeelsLike, humiditySource, windSource, sunriseSource, sunsetSource, now);
+  saveCookie(temp, icon, city, country, forecast, tempFeelsLike, humiditySource, windSource, sunriseSource, sunsetSource, now);
 }

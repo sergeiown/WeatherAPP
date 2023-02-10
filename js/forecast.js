@@ -4,7 +4,7 @@
 
 import { showWidget } from "./widget_visible.js";
 import { fillWidgetWithApi } from "./widget_from_api.js";
-import getDomVariables from "./dom_variables.js";
+import { getDomVariables } from "./dom_variables.js";
 
 const variables = getDomVariables();
 

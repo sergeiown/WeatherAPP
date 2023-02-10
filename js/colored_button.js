@@ -1,7 +1,7 @@
 "use strict";
 /* make the button visible enough for the user */
 
-import getDomVariables from "./dom_variables.js";
+import { getDomVariables } from "./dom_variables.js";
 
 const variables = getDomVariables();
 

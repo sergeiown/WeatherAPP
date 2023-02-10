@@ -20,7 +20,7 @@ const timeContainer = document.querySelector(".time");
 const updateTime = document.querySelector("#updateTime");
 const cookieTime = document.querySelector("#savedTime");
 
-export default function getDomVariables() {
+export function getDomVariables() {
   return {
     form,
     cityName,

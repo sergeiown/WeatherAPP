@@ -2,7 +2,7 @@
 
 import { hideWidget } from "./widget_invisible.js";
 import { getCountries } from "./country_list.js";
-import getDomVariables from "./dom_variables.js";
+import { getDomVariables } from "./dom_variables.js";
 const variables = getDomVariables();
 
 export function clearForm() {

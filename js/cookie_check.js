@@ -3,7 +3,7 @@
 
 import { fillWidgetWithCookie } from "./widget_from_cookie.js";
 import { showWidget } from "./widget_visible.js";
-import getDomVariables from "./dom_variables.js";
+import { getDomVariables } from "./dom_variables.js";
 
 const variables = getDomVariables();
 
