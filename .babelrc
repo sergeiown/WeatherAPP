@@ -4,11 +4,11 @@
       "@babel/preset-env",
       {
         "targets": {
-          "node": "current",
-          "ios": "6"
+          "ios": "7"
         },
         "modules": false
       }
     ]
-  ]
+  ],
+  "ignore": ["./js/start.js"]
 }
