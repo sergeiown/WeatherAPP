@@ -1,14 +1,14 @@
 /* Check if the Safari browser is in use and the version of iOS. Use the navigator.userAgent. */
 
 function isOldIOS() {
-  let ua = navigator.userAgent;
+  var ua = navigator.userAgent;
 
   /* matches "safari" but not "chrome" or "android" */
-  let isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+  var isSafari = /^((?!chrome|android).)*safari/i.test(ua);
   /* matches iOS versions 1.0 through 9.9 */
-  let isOldIOS = /OS [1-9]_[0-9](.*) like Mac/i.test(ua);
+  var isOldIOS = /OS [1-9]_[0-9](.*) like Mac/i.test(ua);
   /* matches iOS versions 10.0 through 10.3 */
-  let isIOS10 = /OS 10_[0-3](.*) like Mac/i.test(ua);
+  var isIOS10 = /OS 10_[0-3](.*) like Mac/i.test(ua);
 
   return isSafari && (isOldIOS || isIOS10);
 }
