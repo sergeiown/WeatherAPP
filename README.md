@@ -2,7 +2,7 @@
 
 ![screenshot](./img/dependencies.png)
 
-Functionality:
+## Functionality
 
 - Weather forecast with search by city name and country using [ISO 3166 Regional Codes.](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes)
 
@@ -15,5 +15,10 @@ Functionality:
 - The forecast data of the last request is stored and displayed in a widget using a cookie.
 
 - If you request a forecast for the same city and country again the new data will only be requested after 10 minutes.
+
+## Built with
+
+- [Babel](https://babeljs.io/) with [ECMAScript Modules (ESM) configuration](https://babeljs.io/docs/en/babel-preset-env)
+
 
 ![screenshot](./img/screenshot.png)
