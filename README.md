@@ -14,6 +14,6 @@ Functionality:
 
 - The forecast data of the last request is stored and displayed in a widget using a cookie.
 
-- If you request a forecast for the same city and country again, the new data with will only be requested after 10 minutes.
+- If you request a forecast for the same city and country again the new data will only be requested after 10 minutes.
 
 ![screenshot](./img/screenshot.png)
