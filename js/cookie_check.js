@@ -1,3 +1,4 @@
+"use strict";
 /* Check if stored forecast is for the same city&country and if it's not older than 10 minutes */
 
 import { fillWidgetWithCookie } from "./widget_from_cookie.js";

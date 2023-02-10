@@ -1,3 +1,5 @@
+"use strict";
+
 /* Fill the widget with data from api response */
 
 import getDomVariables from "./dom_variables.js";

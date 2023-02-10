@@ -1,3 +1,5 @@
+"use strict";
+
 import { placeSuggestions } from "./suggestions_position.js";
 import { synchronizeСountry } from "./country_synchronization.js";
 import { limitCountries } from "./country_synchronization.js";

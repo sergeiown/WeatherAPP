@@ -1,3 +1,5 @@
+"use strict";
+
 import getDomVariables from "./dom_variables.js";
 import { getSuggestions } from "./suggestions.js";
 import { getCountries } from "./country_list.js";
@@ -9,6 +11,8 @@ import { checkCookie } from "./cookie_check.js";
 import { getForecast } from "./forecast.js";
 
 const variables = getDomVariables();
+
+console.clear();
 
 /* Get a list of cities from an external file and display suggestions for the user during input */
 getSuggestions();

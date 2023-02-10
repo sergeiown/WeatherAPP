@@ -1,3 +1,5 @@
+"use strict";
+
 /* Fetch forecast from the server API */
 
 import { showWidget } from "./widget_visible.js";

@@ -1,3 +1,5 @@
+"use strict";
+
 /* Clearing the widget elements */
 
 import getDomVariables from "./dom_variables.js";

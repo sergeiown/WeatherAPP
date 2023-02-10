@@ -1,3 +1,5 @@
+"use strict";
+
 import { hideWidget } from "./widget_invisible.js";
 import { getCountries } from "./country_list.js";
 import getDomVariables from "./dom_variables.js";
@@ -10,4 +12,6 @@ export function clearForm() {
 
   /* Get new list of countries */
   getCountries();
+
+  console.clear();
 }

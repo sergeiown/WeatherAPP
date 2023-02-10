@@ -1,3 +1,5 @@
+"use strict";
+
 const form = document.querySelector("#form");
 const cityName = document.querySelector("#city");
 const countrySelect = document.querySelector("#country");

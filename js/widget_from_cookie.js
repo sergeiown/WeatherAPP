@@ -1,3 +1,5 @@
+"use strict";
+
 /* Fill the widget with data from cookies */
 
 import getDomVariables from "./dom_variables.js";

@@ -1,3 +1,5 @@
+"use strict";
+
 /* Make forecast invisible */
 import getDomVariables from "./dom_variables.js";
 
