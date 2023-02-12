@@ -32,16 +32,19 @@
 %form {
   font-size: 1.1rem;
   color: #0e2a47;
-  font-weight: bolder;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 %suggestions {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 2.2rem;
   color: #0e2a47;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 %suggestions-hover {
-  font-size: 1rem;
   color: aqua;
 }
 

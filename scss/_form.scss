@@ -1,5 +1,4 @@
 #form {
-  @extend %form;
   max-width: 99vw;
   width: 34rem;
   display: flex;
@@ -22,9 +21,17 @@
   input {
     padding: 0 0 0 0.3rem;
   }
+
+  input::placeholder {
+    color: #0e2a47;
+  }
+
   input,
   select {
+    @extend %form;
+    overflow: hidden;
     width: 28.125rem;
+    max-width: 28.125rem;
     height: 2rem;
     border: none;
     border-radius: 0.2rem;
@@ -38,9 +45,6 @@
     @media only screen and (max-width: 1200px) and (orientation: portrait) {
       max-width: 26rem;
     }
-  }
-  input::placeholder {
-    color: #0e2a47;
   }
 
   button {
