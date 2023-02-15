@@ -1,6 +1,6 @@
 # Get Weather App
 
-![screenshot](./img/dependencies.svg)
+![screenshot](./img/dependencies.png)
 
 ## Functionality
 
