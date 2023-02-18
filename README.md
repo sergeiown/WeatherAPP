@@ -1,6 +1,6 @@
 # Get Weather App
 
-![screenshot](./img/dependencies.png)
+![dependencies](https://user-images.githubusercontent.com/112722061/219881012-6a872400-d80a-489b-a9db-f9a9f62c6f82.png)
 
 ## Functionality
 
@@ -20,5 +20,4 @@
 
 - [Babel](https://babeljs.io/) with [ECMAScript Modules (ESM) configuration](https://babeljs.io/docs/en/babel-preset-env)
 
-
-![screenshot](./img/screenshot.png)
+![screenshot](https://user-images.githubusercontent.com/112722061/219881032-1ee83d61-f008-4cb6-a8fb-5499670e5841.png)
