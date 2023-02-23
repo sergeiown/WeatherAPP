@@ -1,28 +1,29 @@
-@import "../scss/reset";
-@import "../scss/fonts";
-@import "../scss/body";
-@import "../scss/suggestions";
-@import "../scss/modal";
-@import "../scss/form";
-@import "../scss/scroll";
-@import "../scss/container";
-@import "../scss/basic";
-@import "../scss/forecast";
-@import "../scss/time";
+@import '../scss/reset';
+@import '../scss/fonts';
+@import '../scss/body';
+@import '../scss/suggestions';
+@import '../scss/modal';
+@import '../scss/form';
+@import '../scss/geoButton';
+@import '../scss/scroll';
+@import '../scss/container';
+@import '../scss/basic';
+@import '../scss/forecast';
+@import '../scss/time';
 
 html {
-  @extend %fontfamily;
-  font-size: 100%;
+    @extend %fontfamily;
+    font-size: 100%;
 }
 
 @media only screen and (max-width: 768px) {
-  html {
-    font-size: 75%;
-  }
+    html {
+        font-size: 75%;
+    }
 }
 
 @media only screen and (max-width: 320px) {
-  html {
-    font-size: 50%;
-  }
+    html {
+        font-size: 50%;
+    }
 }

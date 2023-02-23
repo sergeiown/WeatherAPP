@@ -1,0 +1,48 @@
+.globe {
+    background: darken($color: #0e2a47, $amount: 5%);
+    border: 0px solid #8bc34a;
+    border-radius: 50%;
+    height: 8rem;
+    overflow: hidden;
+    width: 8rem;
+    position: relative;
+
+    svg {
+        animation: rotation 8s linear 0s infinite;
+
+        path {
+            stroke: #24588f;
+        }
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: translateX(0);
+    }
+    from {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes rotation2 {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.line-wrap {
+    @extend %button-form;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -12px 0 0 -100px;
+    width: 200px;
+    overflow: hidden;
+
+    .line {
+        white-space: nowrap;
+        text-indent: 10em;
+        animation: rotation2 8s linear 0s infinite;
+    }
+}
