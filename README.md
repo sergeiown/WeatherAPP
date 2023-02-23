@@ -1,6 +1,6 @@
 # Get Weather App
 
-![dependencies](https://user-images.githubusercontent.com/112722061/219881012-6a872400-d80a-489b-a9db-f9a9f62c6f82.png)
+![Dependencies](https://user-images.githubusercontent.com/112722061/221054510-8b208613-ee81-4e65-88a9-546c435eb4e6.png)
 
 ## Functionality
 
@@ -10,11 +10,13 @@
 
 - Synchronization between selected city and the countries corresponding to the choice has been implemented.
 
-- Fetch requests to the [openweathermap](https://openweathermap.org/api) api are used.
+- Fetch requests to the [Openweathermap API](https://openweathermap.org/api) are used.
 
 - The forecast data of the last request is stored and displayed in a widget using a cookie.
 
 - If you request a forecast for the same city and country again the new data will only be requested after 10 minutes.
+
+- The `navigator.geolocation API` is used to determine the geolocation of users in the application. This API allows you to get the user's current location using GPS or other methods supported by the device.
 
 ## Built with
 
