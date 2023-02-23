@@ -12,6 +12,8 @@ export function getLocation() {
                 variables.modal.close();
             });
         } else {
+            /* Close preloader */
+            variables.modal.close();
             reject();
         }
     });
@@ -19,12 +21,26 @@ export function getLocation() {
 
 function getCityName(lat, lon) {
     const url = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=cf56fb7d05b9d81a18cb8aa28abe286a`;
-    return fetch(url)
+
+    const timeout = new Promise((_, reject) => {
+        setTimeout(() => {
+            reject(new Error('Timeout while fetching location data'));
+        }, 10000);
+    });
+
+    Promise.race([fetch(url), timeout])
         .then((response) => response.json())
         .then((data) => {
             const geoLocationCountry = data[0].country;
             const geoLocationCity = data[0].name;
             localStorage.setItem('geoLocationCountry', geoLocationCountry);
             localStorage.setItem('geoLocationCity', geoLocationCity);
+        })
+        .catch((error) => {
+            /* show the error for 3 seconds */
+            variables.modal.textContent = error.message;
+            setTimeout(() => {
+                variables.modal.close();
+            }, 3000);
         });
 }
