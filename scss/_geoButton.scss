@@ -1,10 +1,11 @@
-div[type='geoLocation'] {
+button[type='geoLocation'] {
     display: none;
     cursor: pointer;
     border-radius: 50%;
     min-width: 8rem;
     flex-basis: 45%;
     justify-content: center;
+    z-index: 1;
 }
 
 .globe {
@@ -18,7 +19,7 @@ div[type='geoLocation'] {
 
     svg {
         animation: rotation 8s linear 0s infinite;
-        z-index: -1;
+        z-index: 0;
 
         path {
             stroke: #24588f;
