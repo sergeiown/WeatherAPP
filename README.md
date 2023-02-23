@@ -1,6 +1,6 @@
 # Get Weather App
 
-![dependencies](https://user-images.githubusercontent.com/112722061/219881012-6a872400-d80a-489b-a9db-f9a9f62c6f82.png)
+![Dependencies](https://user-images.githubusercontent.com/112722061/221054510-8b208613-ee81-4e65-88a9-546c435eb4e6.png)
 
 ## Functionality
 
