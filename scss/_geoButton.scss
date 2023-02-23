@@ -1,10 +1,10 @@
 button[type='geoLocation'] {
     display: none;
-    cursor: pointer;
     border-radius: 50%;
     min-width: 8rem;
     flex-basis: 45%;
     justify-content: center;
+    background: transparent;
     z-index: 1;
 }
 
