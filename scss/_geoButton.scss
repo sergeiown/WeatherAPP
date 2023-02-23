@@ -1,21 +1,19 @@
 button[type='geoLocation'] {
     display: none;
-    border-radius: 50%;
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+    overflow: hidden;
     min-width: 8rem;
     flex-basis: 45%;
     justify-content: center;
     background: transparent;
-    z-index: 3;
 }
 
 .globe {
     background: darken($color: #0e2a47, $amount: 5%);
-    box-shadow: inset -0.2rem -0.2rem 0.5rem #040c14;
+    box-shadow: inset -0.5rem -0.1rem 1rem 0.1rem #040c14;
     border-radius: 50% !important;
     -webkit-border-radius: 50% !important;
-    -o-border-radius: 50% !important;
-    -moz-border-radius: 50% !important;
-    -khtml-border-radius: 50% !important;
     height: 8rem;
     overflow: hidden;
     width: 8rem;
@@ -23,7 +21,6 @@ button[type='geoLocation'] {
 
     svg {
         animation: rotation 8s linear 0s infinite;
-        z-index: 0;
 
         path {
             stroke: #24588f;
