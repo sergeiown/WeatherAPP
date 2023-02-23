@@ -13,8 +13,8 @@ export function createGeoButton() {
       </div>
     </div>`;
 
-    variables.geolocation.style.display = 'flex';
-    variables.geolocation.innerHTML = code;
+    variables.geoLocation.style.display = 'flex';
+    variables.geoLocation.innerHTML = code;
 
     /* stop color cycling for submit button */
     const storedIntervalId = localStorage.getItem('intervalId');

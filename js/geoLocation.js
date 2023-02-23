@@ -8,6 +8,8 @@ export function getLocation() {
 
                 const { lat, lon } = { lat: coords.latitude, lon: coords.longitude };
                 getCityName(lat, lon);
+                /* Close preloader */
+                variables.modal.close();
             });
         } else {
             reject();
@@ -20,7 +22,9 @@ function getCityName(lat, lon) {
     return fetch(url)
         .then((response) => response.json())
         .then((data) => {
+            const geoLocationCountry = data[0].country;
             const geoLocationCity = data[0].name;
+            localStorage.setItem('geoLocationCountry', geoLocationCountry);
             localStorage.setItem('geoLocationCity', geoLocationCity);
         });
 }

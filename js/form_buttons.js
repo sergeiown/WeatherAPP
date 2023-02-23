@@ -14,7 +14,7 @@ export function changeButtons() {
         if (countryInputValue.length > 0) {
             cycleButtonColors();
             variables.clear.style.display = 'block';
-            variables.geolocation.style.display = 'none';
+            variables.geoLocation.style.display = 'none';
         } else {
             createGeoButton();
             variables.clear.style.display = 'none';
@@ -26,7 +26,7 @@ export function changeButtons() {
         if (cityInputValue.length > 0) {
             cycleButtonColors();
             variables.clear.style.display = 'block';
-            variables.geolocation.style.display = 'none';
+            variables.geoLocation.style.display = 'none';
         } else {
             createGeoButton();
             variables.clear.style.display = 'none';

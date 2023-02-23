@@ -10,6 +10,8 @@ import { hideWidget } from './widget_invisible.js';
 import { clearWidget } from './widget_clear.js';
 import { checkCookie } from './cookie_check.js';
 import { getForecast } from './forecast.js';
+import { synchronizeСountry } from './country_synchronization.js';
+import { limitCountries } from './country_synchronization.js';
 
 const variables = getDomVariables();
 
@@ -24,8 +26,6 @@ variables.cityName.addEventListener('focus', getCountries);
 
 /* Change the visibility and appearance of buttons */
 changeButtons();
-
-getLocation();
 
 /* ----- obtaining a forecast based on the form data ----- */
 
@@ -56,6 +56,39 @@ variables.form.addEventListener('submit', (event) => {
 });
 
 /* ----- obtaining a forecast based on geolocation data ----- */
+variables.geoLocation.addEventListener('click', (geoEvent) => {
+    if (localStorage.geoLocationCountry && localStorage.geoLocationCity) {
+        variables.cityName.value = localStorage.geoLocationCity;
+        variables.countrySelect.value = localStorage.geoLocationCountry;
+
+        fetch('./data/citylist.json')
+            .then((response) => response.json())
+            .then((cities) => limitCountries(synchronizeСountry(cities)));
+
+        variables.clear.style.display = 'block';
+        variables.geoLocation.style.display = 'none';
+
+        const submitEvent = new Event('event');
+        variables.form.dispatchEvent(submitEvent);
+    } else {
+        variables.modal.innerHTML = variables.preloader;
+        variables.modal.showModal();
+        getLocation();
+
+        variables.cityName.value = localStorage.geoLocationCity;
+        variables.countrySelect.value = localStorage.geoLocationCountry;
+
+        fetch('./data/citylist.json')
+            .then((response) => response.json())
+            .then((cities) => limitCountries(synchronizeСountry(cities)));
+
+        variables.clear.style.display = 'block';
+        variables.geoLocation.style.display = 'none';
+
+        const submitEvent = new Event('event');
+        variables.form.dispatchEvent(submitEvent);
+    }
+});
 
 /* Clear form data */
 variables.clear.addEventListener('click', clearForm);
