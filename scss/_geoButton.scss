@@ -5,13 +5,17 @@ button[type='geoLocation'] {
     flex-basis: 45%;
     justify-content: center;
     background: transparent;
-    z-index: 1;
+    z-index: 3;
 }
 
 .globe {
     background: darken($color: #0e2a47, $amount: 5%);
     box-shadow: inset -0.2rem -0.2rem 0.5rem #040c14;
-    border-radius: 50%;
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+    -o-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -khtml-border-radius: 50% !important;
     height: 8rem;
     overflow: hidden;
     width: 8rem;
