@@ -1,12 +1,11 @@
 'use strict';
 
 import { getDomVariables } from './dom_variables.js';
-import { createGeoButton } from './createGeoButton.js';
 import { getSuggestions } from './suggestions.js';
 import { getCountries } from './country_list.js';
+import { changeButtons } from './form_buttons.js';
 import { clearForm } from './form_clear.js';
 import { hideWidget } from './widget_invisible.js';
-import { cycleButtonColors } from './colored_button.js';
 import { clearWidget } from './widget_clear.js';
 import { checkCookie } from './cookie_check.js';
 import { getForecast } from './forecast.js';
@@ -19,13 +18,11 @@ getSuggestions();
 /* Get an initial list of countries */
 getCountries();
 
-/* Style the form-submit button (change colors smoothly) */
-cycleButtonColors();
-
-createGeoButton();
-
 /* Get a new country list each time a new city name is entered */
 variables.cityName.addEventListener('focus', getCountries);
+
+/* Change the visibility and appearance of buttons */
+changeButtons();
 
 /* ----- obtaining a forecast based on the form data ----- */
 

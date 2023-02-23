@@ -1,77 +1,82 @@
 #form {
-  max-width: 99vw;
-  width: 34rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem 0;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  background: rgba($color: #0e2a47, $alpha: 0.9);
-  box-shadow: 0 0 2rem #fff;
-
-  @media only screen and (max-width: 1200px) and (orientation: landscape) {
-    width: 18rem;
-    height: 15rem;
-    gap: 1rem;
-    padding: 0.5rem;
-  }
-
-  input {
-    padding: 0 0 0 0.3rem;
-  }
-
-  input::placeholder {
-    color: #0e2a47;
-  }
-
-  input,
-  select {
-    @extend %form;
-    overflow: hidden;
-    width: 28.125rem;
-    max-width: 28.125rem;
-    height: 2rem;
-    border: none;
-    border-radius: 0.2rem;
-    background-color: rgba($color: #fff, $alpha: 0.7);
-    box-shadow: 0 0 0.3rem #000;
+    max-width: 99vw;
+    width: 34rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: rgba($color: #0e2a47, $alpha: 0.9);
+    box-shadow: 0 0 2rem #fff;
 
     @media only screen and (max-width: 1200px) and (orientation: landscape) {
-      max-width: 16rem;
+        width: 18rem;
+        height: 15rem;
+        gap: 1rem;
+        padding: 0.5rem;
     }
 
-    @media only screen and (max-width: 1200px) and (orientation: portrait) {
-      max-width: 26rem;
-    }
-  }
-
-  button {
-    @extend %button-form;
-    border: none;
-    transition: color 1s ease-in-out;
-
-    &:hover {
-      @extend %button-form-hover;
+    input {
+        padding: 0 0 0 0.3rem;
     }
 
-    &:active {
-      @extend %button-form-active;
-    }
-  }
-
-  .buttonWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    button[type="submit"] {
-      flex-basis: 60%;
+    input::placeholder {
+        color: #0e2a47;
     }
 
-    button[type="button"] {
-      flex-basis: 40%;
+    input,
+    select {
+        @extend %form;
+        overflow: hidden;
+        width: 28.125rem;
+        max-width: 28.125rem;
+        height: 2rem;
+        border: none;
+        border-radius: 0.2rem;
+        background-color: rgba($color: #fff, $alpha: 0.7);
+        box-shadow: 0 0 0.3rem #000;
+
+        @media only screen and (max-width: 1200px) and (orientation: landscape) {
+            max-width: 16rem;
+        }
+
+        @media only screen and (max-width: 1200px) and (orientation: portrait) {
+            max-width: 26rem;
+        }
     }
-  }
+
+    button {
+        @extend %button-form;
+        border: none;
+        transition: color 1s ease-in-out;
+
+        &:hover {
+            @extend %button-form-hover;
+        }
+
+        &:active {
+            @extend %button-form-active;
+        }
+    }
+
+    .buttonWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button[type='submit'] {
+            height: 8rem;
+            min-width: 8rem;
+            flex-basis: 45%;
+        }
+
+        button[type='button'] {
+            display: none;
+            height: 8rem;
+            min-width: 8rem;
+            flex-basis: 45%;
+        }
+    }
 }
