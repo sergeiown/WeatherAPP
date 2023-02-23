@@ -1,5 +1,6 @@
 'use strict';
 
+import { getLocation } from './geoLocation.js';
 import { getDomVariables } from './dom_variables.js';
 import { getSuggestions } from './suggestions.js';
 import { getCountries } from './country_list.js';
@@ -23,6 +24,8 @@ variables.cityName.addEventListener('focus', getCountries);
 
 /* Change the visibility and appearance of buttons */
 changeButtons();
+
+getLocation();
 
 /* ----- obtaining a forecast based on the form data ----- */
 
