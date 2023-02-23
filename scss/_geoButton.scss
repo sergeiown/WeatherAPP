@@ -1,5 +1,6 @@
-button[type='geoLocation'] {
+div[type='geoLocation'] {
     display: none;
+    cursor: pointer;
     border-radius: 50%;
     min-width: 8rem;
     flex-basis: 45%;
