@@ -11,14 +11,9 @@ export function getLocation() {
             navigator.geolocation.getCurrentPosition(({ coords }) => {
                 const { lat, lon } = { lat: coords.latitude, lon: coords.longitude };
 
-                if (!getCityName(lat, lon)) {
-                    clearForm();
-                }
                 getCityName(lat, lon)
                     .then(() => {
                         resolve({ lat: lat, lon: lon });
-                        /* Close preloader */
-                        variables.modal.close();
                     })
                     .catch((error) => {
                         /* show the error for 3 seconds */
@@ -29,8 +24,6 @@ export function getLocation() {
                     });
             });
         } else {
-            /* Close preloader */
-            variables.modal.close();
             reject();
         }
     });

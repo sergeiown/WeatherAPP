@@ -71,8 +71,6 @@ variables.geoLocation.addEventListener('click', (geoEvent) => {
         const submitEvent = new Event('event');
         variables.form.dispatchEvent(submitEvent);
     } else {
-        variables.modal.innerHTML = variables.preloader;
-        variables.modal.showModal();
         getLocation();
 
         variables.cityName.value = localStorage.geoLocationCity;
