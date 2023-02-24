@@ -17,7 +17,10 @@ export function createGeoButton() {
     variables.geoLocation.innerHTML = code;
 
     /* stop color cycling for submit button */
-    const storedIntervalId = localStorage.getItem('intervalId');
-    clearInterval(storedIntervalId);
+    const intervalIds = JSON.parse(localStorage.getItem('intervalIds'));
+    if (intervalIds && Array.isArray(intervalIds)) {
+        intervalIds.forEach((intervalId) => clearInterval(intervalId));
+        localStorage.removeItem('intervalIds');
+    }
     variables.button.style.color = 'aqua';
 }

@@ -5,6 +5,8 @@ import { getDomVariables } from './dom_variables.js';
 
 const variables = getDomVariables();
 
+const intervalIds = JSON.parse(localStorage.getItem('intervalIds')) || [];
+
 export function cycleButtonColors() {
     const buttonColors = [
         '#1D3F72',
@@ -29,10 +31,15 @@ export function cycleButtonColors() {
     ];
 
     let colorIndex = 0;
+
+    /* start color cycling for submit button */
     const intervalId = setInterval(() => {
         variables.button.style.color = buttonColors[colorIndex % buttonColors.length];
         colorIndex++;
     }, 100);
+    intervalIds.push(intervalId);
 
-    localStorage.setItem('intervalId', intervalId);
+    localStorage.setItem('intervalIds', JSON.stringify(intervalIds));
+
+    console.log(`cycling interval Ids: ${intervalIds}`);
 }
