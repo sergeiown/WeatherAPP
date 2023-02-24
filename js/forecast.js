@@ -28,6 +28,7 @@ export function getForecast(city, country, now) {
     Promise.race([timeout, apiRequest])
         .then((response) => {
             if (!response.ok) {
+                clearForm();
                 throw new Error('City not found!');
             }
             return response.json();
@@ -50,7 +51,6 @@ export function getForecast(city, country, now) {
             variables.modal.textContent = error.message;
             setTimeout(() => {
                 variables.modal.close();
-                clearForm();
             }, 3000);
         });
 }
