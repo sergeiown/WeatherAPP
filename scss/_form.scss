@@ -63,20 +63,33 @@
 
     .buttonWrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+        gap: 5rem;
+
+        @media only screen and (max-width: 1200px) and (orientation: landscape) {
+            gap: 0.1rem;
+        }
 
         button[type='submit'] {
+            width: 8rem;
             height: 8rem;
+            min-height: 8rem;
             min-width: 8rem;
-            flex-basis: 45%;
+            max-height: 8rem;
+            max-width: 8rem;
+            flex-basis: 50%;
         }
 
         button[type='button'] {
             display: none;
+            width: 8rem;
             height: 8rem;
+            min-height: 8rem;
             min-width: 8rem;
-            flex-basis: 45%;
+            max-height: 8rem;
+            max-width: 8rem;
+            flex-basis: 50%;
         }
     }
 }
