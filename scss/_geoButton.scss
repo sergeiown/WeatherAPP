@@ -13,6 +13,11 @@ button[type='geoLocation'] {
     justify-content: center;
     background: transparent;
     box-shadow: 0 0 1.5rem #24588f;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 0 2rem #24588f;
+    }
 }
 
 .globe {

@@ -79,6 +79,13 @@
             max-height: 8rem;
             max-width: 8rem;
             flex-basis: 50%;
+            box-shadow: 0 0 1rem #24588f;
+            border-radius: 1rem;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                box-shadow: 0 0 2.5rem #24588f;
+            }
         }
 
         button[type='button'] {
@@ -90,6 +97,13 @@
             max-height: 8rem;
             max-width: 8rem;
             flex-basis: 50%;
+            box-shadow: 0 0 1rem #24588f;
+            border-radius: 1rem;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                box-shadow: 0 0 2rem #24588f;
+            }
         }
     }
 }
