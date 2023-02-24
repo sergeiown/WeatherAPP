@@ -1,6 +1,5 @@
 'use strict';
 
-import { clearForm } from './form_clear.js';
 import { getDomVariables } from './dom_variables.js';
 
 const variables = getDomVariables();
