@@ -4,12 +4,12 @@ export function getLocation() {
     return new Promise((resolve, reject) => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(({ coords }) => {
-                resolve({ lat: coords.latitude, lon: coords.longitude });
-
                 const { lat, lon } = { lat: coords.latitude, lon: coords.longitude };
-                getCityName(lat, lon);
-                /* Close preloader */
-                variables.modal.close();
+                getCityName(lat, lon).then(() => {
+                    resolve({ lat: lat, lon: lon });
+                    /* Close preloader */
+                    variables.modal.close();
+                });
             });
         } else {
             /* Close preloader */
