@@ -5,9 +5,9 @@ import { getDomVariables } from './dom_variables.js';
 
 const variables = getDomVariables();
 
-const intervalIds = JSON.parse(localStorage.getItem('intervalIds')) || [];
-
 export function cycleButtonColors() {
+    const intervalIds = JSON.parse(localStorage.getItem('intervalIds')) || [];
+
     const buttonColors = [
         '#1D3F72',
         '#2D5B8B',
@@ -41,5 +41,5 @@ export function cycleButtonColors() {
 
     localStorage.setItem('intervalIds', JSON.stringify(intervalIds));
 
-    console.log(`cycling interval Ids: ${intervalIds}`);
+    console.log(`cycling interval Ids: ${JSON.parse(localStorage.getItem('intervalIds'))}`);
 }
