@@ -2,14 +2,14 @@ console.clear();
 
 if (!isIos()) {
     /* Use userAgentData read-only property of the Navigator interface */
-    const uaData = navigator.userAgentData;
-    const browserBrands = uaData.brands.map((brand) => brand.brand);
+    // const uaData = navigator.userAgentData;
+    // const browserBrands = uaData.brands.map((brand) => brand.brand);
 
     const script = document.createElement('script');
     script.src = './js/app.js';
     script.type = 'module';
     document.head.appendChild(script);
-    console.log(`Modern browser based on ${browserBrands[0]} is used`);
+    // console.log(`Modern browser based on ${browserBrands[0]} is used`);
 } else {
     const script = document.createElement('script');
     script.src = './dist/app.js';
