@@ -9,21 +9,10 @@ const variables = getDomVariables();
 export function changeButtons() {
     createGeoButton();
 
-    variables.countrySelect.addEventListener('input', (countryEvent) => {
-        const countryInputValue = countryEvent.target.value;
-        if (countryInputValue.length > 0) {
-            cycleButtonColors();
-            variables.clear.style.display = 'block';
-            variables.geoLocation.style.display = 'none';
-        } else {
-            createGeoButton();
-            variables.clear.style.display = 'none';
-        }
-    });
+    variables.form.addEventListener('input', (event) => {
+        const InputValue = event.target.value;
 
-    variables.cityName.addEventListener('input', (cityEvent) => {
-        const cityInputValue = cityEvent.target.value;
-        if (cityInputValue.length > 0) {
+        if (InputValue.length > 0) {
             cycleButtonColors();
             variables.clear.style.display = 'block';
             variables.geoLocation.style.display = 'none';

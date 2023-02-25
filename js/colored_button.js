@@ -6,8 +6,6 @@ import { getDomVariables } from './dom_variables.js';
 const variables = getDomVariables();
 
 export function cycleButtonColors() {
-    const intervalIds = JSON.parse(localStorage.getItem('intervalIds')) || [];
-
     const buttonColors = [
         '#1D3F72',
         '#2D5B8B',
@@ -33,13 +31,19 @@ export function cycleButtonColors() {
     let colorIndex = 0;
 
     /* start color cycling for submit button */
-    const intervalId = setInterval(() => {
+    let intervalId = JSON.parse(localStorage.getItem('intervalId')) || 0;
+    clearInterval(intervalId);
+    // console.log(`remove interval Id: ${JSON.parse(localStorage.getItem('intervalId'))}`);
+
+    intervalId = 0;
+    localStorage.removeItem('intervalId');
+
+    intervalId = setInterval(() => {
         variables.button.style.color = buttonColors[colorIndex % buttonColors.length];
         colorIndex++;
     }, 100);
-    intervalIds.push(intervalId);
 
-    localStorage.setItem('intervalIds', JSON.stringify(intervalIds));
+    localStorage.setItem('intervalId', JSON.stringify(intervalId));
 
-    console.log(`cycling interval Ids: ${JSON.parse(localStorage.getItem('intervalIds'))}`);
+    // console.log(`add interval Id: ${JSON.parse(localStorage.getItem('intervalId'))}`);
 }

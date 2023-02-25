@@ -17,10 +17,11 @@ export function createGeoButton() {
     variables.geoLocation.innerHTML = code;
 
     /* stop color cycling for submit button */
-    const intervalIds = JSON.parse(localStorage.getItem('intervalIds'));
-    if (intervalIds && Array.isArray(intervalIds)) {
-        intervalIds.forEach((intervalId) => clearInterval(intervalId));
-        localStorage.removeItem('intervalIds');
-    }
+    const intervalId = JSON.parse(localStorage.getItem('intervalId'));
+    clearInterval(intervalId);
+    // console.log(`remove interval Id: ${JSON.parse(localStorage.getItem('intervalId'))}`);
+
+    localStorage.removeItem('intervalIds');
+
     variables.button.style.color = 'aqua';
 }

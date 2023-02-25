@@ -1,20 +1,7 @@
-"use strict";
+'use strict';
 /* Save cookie */
 
 export function saveCookie(
-  temp,
-  icon,
-  city,
-  country,
-  forecast,
-  tempFeelsLike,
-  humiditySource,
-  windSource,
-  sunriseSource,
-  sunsetSource,
-  now
-) {
-  document.cookie = `forecast=${JSON.stringify({
     temp,
     icon,
     city,
@@ -25,6 +12,19 @@ export function saveCookie(
     windSource,
     sunriseSource,
     sunsetSource,
-    time: now,
-  })}; max-age=600`;
+    now
+) {
+    document.cookie = `forecast=${JSON.stringify({
+        temp,
+        icon,
+        city,
+        country,
+        forecast,
+        tempFeelsLike,
+        humiditySource,
+        windSource,
+        sunriseSource,
+        sunsetSource,
+        time: now,
+    })}; max-age=600; Secure`;
 }
