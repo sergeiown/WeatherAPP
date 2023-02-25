@@ -5,6 +5,7 @@ import { getDomVariables } from './dom_variables.js';
 import { getSuggestions } from './suggestions.js';
 import { getCountries } from './country_list.js';
 import { changeButtons } from './form_buttons.js';
+import { cycleButtonColors } from './colored_button.js';
 import { clearForm } from './form_clear.js';
 import { hideWidget } from './widget_invisible.js';
 import { clearWidget } from './widget_clear.js';
@@ -67,6 +68,7 @@ variables.geoLocation.addEventListener('click', (geoEvent) => {
 
         variables.clear.style.display = 'block';
         variables.geoLocation.style.display = 'none';
+        cycleButtonColors();
 
         const submitEvent = new Event('event');
         variables.form.dispatchEvent(submitEvent);
@@ -82,6 +84,7 @@ variables.geoLocation.addEventListener('click', (geoEvent) => {
 
         variables.clear.style.display = 'block';
         variables.geoLocation.style.display = 'none';
+        cycleButtonColors();
 
         const submitEvent = new Event('event');
         variables.form.dispatchEvent(submitEvent);
