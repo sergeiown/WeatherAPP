@@ -27,7 +27,6 @@ function isIos() {
     };
 
     const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const isAppleDevice = navigator.userAgent.includes('Macintosh');
 
-    return isIos || (isAppleDevice && whetherOldIos());
+    return isIos && whetherOldIos();
 }
