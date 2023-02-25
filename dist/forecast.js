@@ -1,15 +1,16 @@
-"use strict";
+'use strict';
 
 /* Fetch forecast from the server API */
-import { showWidget } from "./widget_visible.js";
-import { fillWidgetWithApi } from "./widget_from_api.js";
-import { getDomVariables } from "./dom_variables.js";
+import { showWidget } from './widget_visible.js';
+import { fillWidgetWithApi } from './widget_from_api.js';
+import { getDomVariables } from './dom_variables.js';
+import { clearForm } from './form_clear.js';
 var variables = getDomVariables();
 export function getForecast(city, country, now) {
   /* Timeout for a response for 10 seconds and then generate an error */
   var timeout = new Promise(function (resolve, reject) {
     setTimeout(function () {
-      reject(new Error("Request timed out. Please try again later."));
+      reject(new Error('Request timed out. Please try again later.'));
     }, 10000);
   });
 
@@ -19,11 +20,12 @@ export function getForecast(city, country, now) {
   /* Use "Promise.race" which allows to determine which promise will end first. */
   Promise.race([timeout, apiRequest]).then(function (response) {
     if (!response.ok) {
-      throw new Error("City not found!");
+      clearForm();
+      throw new Error('City not found!');
     }
     return response.json();
   }).then(function (data) {
-    console.log("API response :");
+    console.log('API response :');
     console.log(data);
 
     /* Fill the widget with data from api response. Save data to the cookie */

@@ -1,14 +1,18 @@
-"use strict";
+'use strict';
 
-import { getDomVariables } from "./dom_variables.js";
-import { getSuggestions } from "./suggestions.js";
-import { getCountries } from "./country_list.js";
-import { clearForm } from "./form_clear.js";
-import { hideWidget } from "./widget_invisible.js";
-import { cycleButtonColors } from "./colored_button.js";
-import { clearWidget } from "./widget_clear.js";
-import { checkCookie } from "./cookie_check.js";
-import { getForecast } from "./forecast.js";
+import { getLocation } from './geoLocation.js';
+import { getDomVariables } from './dom_variables.js';
+import { getSuggestions } from './suggestions.js';
+import { getCountries } from './country_list.js';
+import { changeButtons } from './form_buttons.js';
+import { cycleButtonColors } from './colored_button.js';
+import { clearForm } from './form_clear.js';
+import { hideWidget } from './widget_invisible.js';
+import { clearWidget } from './widget_clear.js';
+import { checkCookie } from './cookie_check.js';
+import { getForecast } from './forecast.js';
+import { synchronizeСountry } from './country_synchronization.js';
+import { limitCountries } from './country_synchronization.js';
 var variables = getDomVariables();
 
 /* Get a list of cities from an external file and display suggestions for the user during input */
@@ -17,14 +21,16 @@ getSuggestions();
 /* Get an initial list of countries */
 getCountries();
 
-/* Style the form-submit button (change colors smoothly) */
-cycleButtonColors();
-
 /* Get a new country list each time a new city name is entered */
-variables.cityName.addEventListener("focus", getCountries);
+variables.cityName.addEventListener('focus', getCountries);
+
+/* Change the visibility and appearance of buttons */
+changeButtons();
+
+/* ----- obtaining a forecast based on the form data ----- */
 
 /* Waiting for the user to submit the form */
-variables.form.addEventListener("submit", function (event) {
+variables.form.addEventListener('submit', function (event) {
   event.preventDefault();
 
   /* Show preloader after submit */
@@ -49,5 +55,37 @@ variables.form.addEventListener("submit", function (event) {
   getForecast(city, country, now);
 });
 
+/* ----- obtaining a forecast based on geolocation data ----- */
+variables.geoLocation.addEventListener('click', function (geoEvent) {
+  if (localStorage.geoLocationCountry && localStorage.geoLocationCity) {
+    variables.cityName.value = localStorage.geoLocationCity;
+    variables.countrySelect.value = localStorage.geoLocationCountry;
+    fetch('./data/citylist.json').then(function (response) {
+      return response.json();
+    }).then(function (cities) {
+      return limitCountries(synchronizeСountry(cities));
+    });
+    variables.clear.style.display = 'block';
+    variables.geoLocation.style.display = 'none';
+    cycleButtonColors();
+    var submitEvent = new Event('event');
+    variables.form.dispatchEvent(submitEvent);
+  } else {
+    getLocation();
+    variables.cityName.value = localStorage.geoLocationCity;
+    variables.countrySelect.value = localStorage.geoLocationCountry;
+    fetch('./data/citylist.json').then(function (response) {
+      return response.json();
+    }).then(function (cities) {
+      return limitCountries(synchronizeСountry(cities));
+    });
+    variables.clear.style.display = 'block';
+    variables.geoLocation.style.display = 'none';
+    cycleButtonColors();
+    var _submitEvent = new Event('event');
+    variables.form.dispatchEvent(_submitEvent);
+  }
+});
+
 /* Clear form data */
-variables.clear.addEventListener("click", clearForm);
+variables.clear.addEventListener('click', clearForm);

@@ -1,14 +1,17 @@
-"use strict";
+'use strict';
 
-import { hideWidget } from "./widget_invisible.js";
-import { getCountries } from "./country_list.js";
-import { getDomVariables } from "./dom_variables.js";
+import { hideWidget } from './widget_invisible.js';
+import { createGeoButton } from './createGeoButton.js';
+import { getCountries } from './country_list.js';
+import { getDomVariables } from './dom_variables.js';
 var variables = getDomVariables();
 export function clearForm() {
   hideWidget();
-  variables.cityName.value = "";
+  variables.cityName.value = '';
 
   /* Get new list of countries */
   getCountries();
+  variables.clear.style.display = 'none';
+  createGeoButton();
   console.clear();
 }

@@ -24,10 +24,10 @@ function isOldIOS() {
     const isSafari = browserBrands.includes('Safari');
 
     /* matches iOS versions 1.0 through 9.9 */
-    const isOldIOS = /OS [1-9]_[0-9](.*) like Mac/i.test(uaData.ua);
+    const isOldIOS = /OS (?:1[0-9]|[1-9])_[0-9](.*) like Mac/i.test(uaData.ua);
 
     /* matches iOS versions 10.0 through 10.3 */
-    const isIOS10 = /OS 10_[0-3](.*) like Mac/i.test(uaData.ua);
+    const isIOS10 = /OS 10_[0-2](.*) like Mac/i.test(uaData.ua);
 
     return isSafari && (isOldIOS || isIOS10);
 }

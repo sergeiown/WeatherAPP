@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /* Save cookie */
 export function saveCookie(temp, icon, city, country, forecast, tempFeelsLike, humiditySource, windSource, sunriseSource, sunsetSource, now) {
@@ -14,5 +14,5 @@ export function saveCookie(temp, icon, city, country, forecast, tempFeelsLike, h
     sunriseSource: sunriseSource,
     sunsetSource: sunsetSource,
     time: now
-  }), "; max-age=600");
+  }), "; max-age=600; Secure");
 }
