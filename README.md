@@ -22,6 +22,6 @@
 
 -   [Babel](https://babeljs.io/) with [ECMAScript Modules (ESM) configuration](https://babeljs.io/docs/en/babel-preset-env)
 
-![screenshot_one](https://user-images.githubusercontent.com/112722061/221370347-10e4e859-78f6-4798-bb9f-fe7c5753da64.png)
+![screenshot_one](https://user-images.githubusercontent.com/112722061/221371559-2b104f13-5a9a-4593-aa99-5c29543a50ea.png)
 
 ![screenshot_two](https://user-images.githubusercontent.com/112722061/221370244-c4b7f3d1-f995-4c85-98a8-eb458d6df93c.png)
