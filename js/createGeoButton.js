@@ -21,7 +21,7 @@ export function createGeoButton() {
     clearInterval(intervalId);
     // console.log(`remove interval Id: ${JSON.parse(localStorage.getItem('intervalId'))}`);
 
-    localStorage.removeItem('intervalIds');
+    localStorage.removeItem('intervalId');
 
     variables.button.style.color = 'aqua';
 }
