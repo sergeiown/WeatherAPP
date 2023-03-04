@@ -25,8 +25,12 @@ getCountries();
 /* Get a new country list each time a new city name is entered */
 variables.cityName.addEventListener('focus', getCountries);
 
-/* Change the visibility and appearance of buttons */
+/* Change the visibility and appearance*/
 changeButtons();
+
+window.addEventListener('load', function () {
+    document.body.style.visibility = 'visible';
+});
 
 /* ----- obtaining a forecast based on the form data ----- */
 
