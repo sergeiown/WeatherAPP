@@ -5,16 +5,25 @@ if (!isIos()) {
     // const uaData = navigator.userAgentData;
     // const browserBrands = uaData.brands.map((brand) => brand.brand);
 
-    const script = document.createElement('script');
-    script.src = './js/app.js';
-    script.type = 'module';
-    document.head.appendChild(script);
+    window.addEventListener('load', function () {
+        const script = document.createElement('script');
+        script.src = './js/app.js';
+        script.type = 'module';
+        document.head.appendChild(script);
+
+        document.body.hidden = false;
+    });
+
     // console.log(`Modern browser based on ${browserBrands[0]} is used`);
 } else {
-    const script = document.createElement('script');
-    script.src = './dist/app.js';
-    script.type = 'module';
-    document.head.appendChild(script);
+    window.addEventListener('load', function () {
+        const script = document.createElement('script');
+        script.src = './dist/app.js';
+        script.type = 'module';
+        document.head.appendChild(script);
+
+        document.body.hidden = false;
+    });
 }
 
 function isIos() {
