@@ -1,8 +1,9 @@
 # Get Weather App
+### A compact api weather app with additional functionality and a pleasant user interface
 
 ![Dependencies](https://user-images.githubusercontent.com/112722061/221054510-8b208613-ee81-4e65-88a9-546c435eb4e6.png)
 
-## Functionality
+### Functionality
 
 -   Weather forecast with search by city name and country using [ISO 3166 Regional Codes.](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes)
 
@@ -18,7 +19,7 @@
 
 -   The `navigator.geolocation API` is used to determine the geolocation of users in the application. This API allows to get the user's current location using GPS or other methods supported by the device.
 
-## Built with
+### Built with
 
 -   [Babel](https://babeljs.io/) with [ECMAScript Modules (ESM) configuration](https://babeljs.io/docs/en/babel-preset-env)
 
